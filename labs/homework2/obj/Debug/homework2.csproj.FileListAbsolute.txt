@@ -1,0 +1,17 @@
+C:\Users\МельниковЮС\Dropbox\PROG\c#\hw\homework2\bin\Debug\homework2.exe
+C:\Users\МельниковЮС\Dropbox\PROG\c#\hw\homework2\bin\Debug\homework2.pdb
+C:\Users\МельниковЮС\Dropbox\PROG\c#\hw\homework2\obj\Debug\homework2.csprojResolveAssemblyReference.cache
+C:\Users\МельниковЮС\Dropbox\PROG\c#\hw\homework2\obj\Debug\homework2.csproj.CoreCompileInputs.cache
+C:\Users\МельниковЮС\Dropbox\PROG\c#\hw\homework2\obj\Debug\homework2.exe
+C:\Users\МельниковЮС\Dropbox\PROG\c#\hw\homework2\obj\Debug\homework2.pdb
+C:\Users\teeja\Dropbox\prog\c#\hw\homework2\bin\Debug\homework2.exe
+C:\Users\teeja\Dropbox\prog\c#\hw\homework2\bin\Debug\homework2.pdb
+C:\Users\teeja\Dropbox\prog\c#\hw\homework2\obj\Debug\homework2.csproj.CoreCompileInputs.cache
+C:\Users\teeja\Dropbox\prog\c#\hw\homework2\obj\Debug\homework2.exe
+C:\Users\teeja\Dropbox\prog\c#\hw\homework2\obj\Debug\homework2.pdb
+C:\Users\teeja\Dropbox\prog\c#\hw\homework2\obj\Debug\homework2.csprojResolveAssemblyReference.cache
+E:\hw\homework2\bin\Debug\homework2.exe
+E:\hw\homework2\bin\Debug\homework2.pdb
+E:\hw\homework2\obj\Debug\homework2.csprojResolveAssemblyReference.cache
+E:\hw\homework2\obj\Debug\homework2.exe
+E:\hw\homework2\obj\Debug\homework2.pdb
