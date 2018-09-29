@@ -1,0 +1,15 @@
+C:\Users\teeja\Dropbox\prog\c#\hw\homework6-2\bin\Debug\homework6-2.exe.config
+C:\Users\teeja\Dropbox\prog\c#\hw\homework6-2\bin\Debug\homework6-2.exe
+C:\Users\teeja\Dropbox\prog\c#\hw\homework6-2\bin\Debug\homework6-2.pdb
+C:\Users\teeja\Dropbox\prog\c#\hw\homework6-2\obj\Debug\homework6-2.csprojResolveAssemblyReference.cache
+C:\Users\teeja\Dropbox\prog\c#\hw\homework6-2\obj\Debug\MainWindow.g.cs
+C:\Users\teeja\Dropbox\prog\c#\hw\homework6-2\obj\Debug\App.g.cs
+C:\Users\teeja\Dropbox\prog\c#\hw\homework6-2\obj\Debug\homework6-2_MarkupCompile.cache
+C:\Users\teeja\Dropbox\prog\c#\hw\homework6-2\obj\Debug\homework6-2_MarkupCompile.lref
+C:\Users\teeja\Dropbox\prog\c#\hw\homework6-2\obj\Debug\MainWindow.baml
+C:\Users\teeja\Dropbox\prog\c#\hw\homework6-2\obj\Debug\homework6-2.g.resources
+C:\Users\teeja\Dropbox\prog\c#\hw\homework6-2\obj\Debug\homework6_2.Properties.Resources.resources
+C:\Users\teeja\Dropbox\prog\c#\hw\homework6-2\obj\Debug\homework6-2.csproj.GenerateResource.cache
+C:\Users\teeja\Dropbox\prog\c#\hw\homework6-2\obj\Debug\homework6-2.csproj.CoreCompileInputs.cache
+C:\Users\teeja\Dropbox\prog\c#\hw\homework6-2\obj\Debug\homework6-2.exe
+C:\Users\teeja\Dropbox\prog\c#\hw\homework6-2\obj\Debug\homework6-2.pdb
