@@ -1,0 +1,17 @@
+C:\Users\teeja\Dropbox\prog\c#\hw\homework5\bin\Debug\homework5.exe
+C:\Users\teeja\Dropbox\prog\c#\hw\homework5\bin\Debug\homework5.pdb
+C:\Users\teeja\Dropbox\prog\c#\hw\homework5\obj\Debug\homework5.csprojResolveAssemblyReference.cache
+C:\Users\teeja\Dropbox\prog\c#\hw\homework5\obj\Debug\homework5.Form1.resources
+C:\Users\teeja\Dropbox\prog\c#\hw\homework5\obj\Debug\homework5.Properties.Resources.resources
+C:\Users\teeja\Dropbox\prog\c#\hw\homework5\obj\Debug\homework5.csproj.GenerateResource.cache
+C:\Users\teeja\Dropbox\prog\c#\hw\homework5\obj\Debug\homework5.csproj.CoreCompileInputs.cache
+C:\Users\teeja\Dropbox\prog\c#\hw\homework5\obj\Debug\homework5.exe
+C:\Users\teeja\Dropbox\prog\c#\hw\homework5\obj\Debug\homework5.pdb
+E:\c#\hw\homework5\bin\Debug\homework5.exe
+E:\c#\hw\homework5\bin\Debug\homework5.pdb
+E:\c#\hw\homework5\obj\Debug\homework5.csprojResolveAssemblyReference.cache
+E:\c#\hw\homework5\obj\Debug\homework5.Form1.resources
+E:\c#\hw\homework5\obj\Debug\homework5.Properties.Resources.resources
+E:\c#\hw\homework5\obj\Debug\homework5.csproj.GenerateResource.Cache
+E:\c#\hw\homework5\obj\Debug\homework5.exe
+E:\c#\hw\homework5\obj\Debug\homework5.pdb
