@@ -1,0 +1,496 @@
+﻿api key AIzaSyDLh584TAPZrIkeT7728FrXxH_iyC3vBPQ 
+cse 009698661134167960273:pfkgk4hlfby
+<script>
+  (function() {
+    var cx = '009698661134167960273:pfkgk4hlfby';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<gcse:search></gcse:search>
+
+https://www.googleapis.com/customsearch/v1?key=AIzaSyDLh584TAPZrIkeT7728FrXxH_iyC3vBPQ&cx=009698661134167960273:pfkgk4hlfby&q=gorilla
+
+https://cse.google.com/cse.js?cx=009698661134167960273:pfkgk4hlfby
+
+http://www.google.com/search?start=0&num=10&q=gorilla&client=google-csbe&output=xml_no_dtd&cx=009698661134167960273:pfkgk4hlfby
+https://www.google.com/search?q=gorilla&as_filetype=png&output=xml&cx=009698661134167960273:pfkgk4hlfby
+https://www.googleapis.com/customsearch/v1?
+
+https://www.googleapis.com/customsearch/v1?q=gorilla&cx=009698661134167960273:pfkgk4hlfby&alt=json
+
+{
+ "kind": "customsearch#search",
+ "url": {
+  "type": "application/json",
+  "template": "https://www.googleapis.com/customsearch/v1?q={searchTerms}&num={count?}&start={startIndex?}&lr={language?}&safe={safe?}&cx={cx?}&sort={sort?}&filter={filter?}&gl={gl?}&cr={cr?}&googlehost={googleHost?}&c2coff={disableCnTwTranslation?}&hq={hq?}&hl={hl?}&siteSearch={siteSearch?}&siteSearchFilter={siteSearchFilter?}&exactTerms={exactTerms?}&excludeTerms={excludeTerms?}&linkSite={linkSite?}&orTerms={orTerms?}&relatedSite={relatedSite?}&dateRestrict={dateRestrict?}&lowRange={lowRange?}&highRange={highRange?}&searchType={searchType}&fileType={fileType?}&rights={rights?}&imgSize={imgSize?}&imgType={imgType?}&imgColorType={imgColorType?}&imgDominantColor={imgDominantColor?}&alt=json"
+ },
+ "queries": {
+  "request": [
+   {
+    "title": "Google Custom Search - gorilla",
+    "totalResults": "13700000",
+    "searchTerms": "gorilla",
+    "count": 10,
+    "startIndex": 1,
+    "inputEncoding": "utf8",
+    "outputEncoding": "utf8",
+    "safe": "off",
+    "cx": "009698661134167960273:pfkgk4hlfby"
+   }
+  ],
+  "nextPage": [
+   {
+    "title": "Google Custom Search - gorilla",
+    "totalResults": "13700000",
+    "searchTerms": "gorilla",
+    "count": 10,
+    "startIndex": 11,
+    "inputEncoding": "utf8",
+    "outputEncoding": "utf8",
+    "safe": "off",
+    "cx": "009698661134167960273:pfkgk4hlfby"
+   }
+  ]
+ },
+ "context": {
+  "title": "my_search_engine"
+ },
+ "searchInformation": {
+  "searchTime": 0.429154,
+  "formattedSearchTime": "0.43",
+  "totalResults": "13700000",
+  "formattedTotalResults": "13,700,000"
+ },
+ "items": [
+  {
+   "kind": "customsearch#result",
+   "title": "Gorilla - Wikipedia",
+   "htmlTitle": "\u003cb\u003eGorilla\u003c/b\u003e - Wikipedia",
+   "link": "https://en.wikipedia.org/wiki/Gorilla",
+   "displayLink": "en.wikipedia.org",
+   "snippet": "Gorillas are ground-dwelling, predominantly herbivorous apes that inhabit the \nforests of central Sub-Saharan Africa. The genus Gorilla is divided into two ...",
+   "htmlSnippet": "\u003cb\u003eGorillas\u003c/b\u003e are ground-dwelling, predominantly herbivorous apes that inhabit the \u003cbr\u003e\nforests of central Sub-Saharan Africa. The genus \u003cb\u003eGorilla\u003c/b\u003e is divided into two&nbsp;...",
+   "cacheId": "PPD4hUL67VgJ",
+   "formattedUrl": "https://en.wikipedia.org/wiki/Gorilla",
+   "htmlFormattedUrl": "https://en.wikipedia.org/wiki/\u003cb\u003eGorilla\u003c/b\u003e",
+   "pagemap": {
+    "cse_thumbnail": [
+     {
+      "width": "212",
+      "height": "237",
+      "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy-fevI51dTlbJZewIX1axx1c2k9pv32x80tzUxX6iitYhpdlvpmkB8TM"
+     }
+    ],
+    "metatags": [
+     {
+      "referrer": "origin",
+      "og:image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Male_gorilla_in_SF_zoo.jpg/1200px-Male_gorilla_in_SF_zoo.jpg"
+     }
+    ],
+    "cse_image": [
+     {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Male_gorilla_in_SF_zoo.jpg/1200px-Male_gorilla_in_SF_zoo.jpg"
+     }
+    ]
+   }
+  },
+  {
+   "kind": "customsearch#result",
+   "title": "Gorilla Group: Strategy, Creative, Technology, CXM, Managed ...",
+   "htmlTitle": "\u003cb\u003eGorilla\u003c/b\u003e Group: Strategy, Creative, Technology, CXM, Managed ...",
+   "link": "https://www.gorillagroup.com/",
+   "displayLink": "www.gorillagroup.com",
+   "snippet": "Gorilla Group is the commerce experience agency. We propel digital commerce \ngrowth by offering strategy, creative, technology, customer experience, ...",
+   "htmlSnippet": "\u003cb\u003eGorilla\u003c/b\u003e Group is the commerce experience agency. We propel digital commerce \u003cbr\u003e\ngrowth by offering strategy, creative, technology, customer experience,&nbsp;...",
+   "cacheId": "Wjzkpir-WXgJ",
+   "formattedUrl": "https://www.gorillagroup.com/",
+   "htmlFormattedUrl": "https://www.\u003cb\u003egorilla\u003c/b\u003egroup.com/",
+   "pagemap": {
+    "cse_thumbnail": [
+     {
+      "width": "225",
+      "height": "225",
+      "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQB81sLIadriv9UooleCfTQ9ppWFWxXG_vQbUyQpFsMC5IcFSQ8AIpGKLv"
+     }
+    ],
+    "metatags": [
+     {
+      "viewport": "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0",
+      "og:locale": "en_US",
+      "og:type": "website",
+      "og:title": "Strategy, Creative, Technology, CXM, Managed Services - Gorilla Group",
+      "og:description": "Gorilla Group is the commerce experience agency. We propel digital commerce growth by offering strategy, creative, technology, customer experience, managed services, and hosting services to drive client results.",
+      "og:url": "https://www.gorillagroup.com/",
+      "og:site_name": "Commerce Strategy, Creative, Technology, Managed Services, Hosting - Gorilla Group",
+      "twitter:card": "summary_large_image",
+      "twitter:description": "Gorilla Group is the commerce experience agency. We propel digital commerce growth by offering strategy, creative, technology, customer experience, managed services, and hosting services to drive client results.",
+      "twitter:title": "Strategy, Creative, Technology, CXM, Managed Services - Gorilla Group",
+      "twitter:site": "@GorillaCommerce",
+      "twitter:creator": "@GorillaCommerce",
+      "msvalidate.01": "39576FAC295821EF67C051392E185426",
+      "msapplication-tileimage": "https://www.gorillagroup.com/wp-content/uploads/2018/02/cropped-gorilla-favicon-black-270x270.png"
+     }
+    ],
+    "cse_image": [
+     {
+      "src": "https://www.gorillagroup.com/wp-content/uploads/2017/11/manufacturing-hero.jpg"
+     }
+    ]
+   }
+  },
+  {
+   "kind": "customsearch#result",
+   "title": "Incredibly Strong Glues, Tapes, & Sealants | The Gorilla Glue ...",
+   "htmlTitle": "Incredibly Strong Glues, Tapes, &amp; Sealants | The \u003cb\u003eGorilla\u003c/b\u003e Glue ...",
+   "link": "https://www.gorillatough.com/",
+   "displayLink": "www.gorillatough.com",
+   "snippet": "Home of the Original Gorilla Glue, Gorilla Tape®, Gorilla® Super Glue, Gorilla® \nConstruction Adhesive, and other premium tapes, sealants, and adhesives.",
+   "htmlSnippet": "Home of the Original \u003cb\u003eGorilla\u003c/b\u003e Glue, \u003cb\u003eGorilla\u003c/b\u003e Tape®, \u003cb\u003eGorilla\u003c/b\u003e® Super Glue, \u003cb\u003eGorilla\u003c/b\u003e® \u003cbr\u003e\nConstruction Adhesive, and other premium tapes, sealants, and adhesives.",
+   "cacheId": "nE_vb9InmbsJ",
+   "formattedUrl": "https://www.gorillatough.com/",
+   "htmlFormattedUrl": "https://www.\u003cb\u003egorilla\u003c/b\u003etough.com/",
+   "pagemap": {
+    "cse_thumbnail": [
+     {
+      "width": "367",
+      "height": "137",
+      "src": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRp_Pw2xbMunoCz0iuGDyWR6W-SOp-OVS9aDChyFWPrN34OsblUG83kLFI"
+     }
+    ],
+    "metatags": [
+     {
+      "viewport": "width=device-width",
+      "ps-key": "1801-58ab8fd1b846e6dcbb57cffd",
+      "ps-country": "US",
+      "ps-language": "en",
+      "theme-color": "#ffffff",
+      "og:locale": "en_US",
+      "og:type": "website",
+      "og:title": "Incredibly Strong Glues, Tapes, & Sealants | The Gorilla Glue Company",
+      "og:description": "Home of the Original Gorilla Glue, Gorilla Tape®, Gorilla® Super Glue, Gorilla® Construction Adhesive, and other premium tapes, sealants, and adhesives. At Gorilla, we believe in high-quality products and choose to only put the Gorilla logo on products that meet rigorous development standards.",
+      "og:url": "https://www.gorillatough.com/",
+      "og:site_name": "Gorilla Glue",
+      "og:image": "https://www.gorillatough.com/wp-content/uploads/2880x1080_homepage_hero.jpg",
+      "og:image:secure_url": "https://www.gorillatough.com/wp-content/uploads/2880x1080_homepage_hero.jpg",
+      "twitter:card": "summary_large_image",
+      "twitter:description": "Home of the Original Gorilla Glue, Gorilla Tape®, Gorilla® Super Glue, Gorilla® Construction Adhesive, and other premium tapes, sealants, and adhesives. At Gorilla, we believe in high-quality products and choose to only put the Gorilla logo on products that meet rigorous development standards.",
+      "twitter:title": "Incredibly Strong Glues, Tapes, & Sealants | The Gorilla Glue Company",
+      "twitter:image": "https://www.gorillatough.com/wp-content/uploads/2880x1080_homepage_hero.jpg"
+     }
+    ],
+    "cse_image": [
+     {
+      "src": "https://www.gorillatough.com/wp-content/uploads/2880x1080_homepage_hero.jpg"
+     }
+    ]
+   }
+  },
+  {
+   "kind": "customsearch#result",
+   "title": "Gorilla Coffee",
+   "htmlTitle": "\u003cb\u003eGorilla\u003c/b\u003e Coffee",
+   "link": "https://gorillacoffee.com/",
+   "displayLink": "gorillacoffee.com",
+   "snippet": "Gorilla coffee is a 100% independently owned & operated coffee shop and micro-\nroastery in Brooklyn, New York.",
+   "htmlSnippet": "\u003cb\u003eGorilla\u003c/b\u003e coffee is a 100% independently owned &amp; operated coffee shop and micro-\u003cbr\u003e\nroastery in Brooklyn, New York.",
+   "cacheId": "4-gTRA7kwkQJ",
+   "formattedUrl": "https://gorillacoffee.com/",
+   "htmlFormattedUrl": "https://\u003cb\u003egorilla\u003c/b\u003ecoffee.com/",
+   "pagemap": {
+    "cse_thumbnail": [
+     {
+      "width": "268",
+      "height": "103",
+      "src": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQqAdPh7YacSJE0byGA7Ss7V3-XpqCQfjTSQvqCXFgRNfjBJjnTUkw54EI"
+     }
+    ],
+    "metatags": [
+     {
+      "shopify-digital-wallet": "/2133128/digital_wallets/dialog",
+      "shopify-checkout-api-token": "0d3e815b51401b59461c3f6a4157a0dc",
+      "viewport": "width=device-width, initial-scale=1, maximum-scale=1"
+     }
+    ],
+    "cse_image": [
+     {
+      "src": "https://cdn.shopify.com/s/files/1/0213/3128/t/4/assets/logo.png?8574658853327767973"
+     }
+    ]
+   }
+  },
+  {
+   "kind": "customsearch#result",
+   "title": "Restaurant Gorilla",
+   "htmlTitle": "Restaurant \u003cb\u003eGorilla\u003c/b\u003e",
+   "link": "http://restaurantpluto.dk/gorilla/?lang=en",
+   "displayLink": "restaurantpluto.dk",
+   "snippet": "Borgergade 16. DK-1300 København +45 3316 0016. INFO@\nRESTAURANTPLUTO.DK · Klik her for bordbestilling. Store Kongensgade 34. \nDK-1264 ...",
+   "htmlSnippet": "Borgergade 16. DK-1300 København +45 3316 0016. INFO@\u003cbr\u003e\nRESTAURANTPLUTO.DK &middot; Klik her for bordbestilling. Store Kongensgade 34. \u003cbr\u003e\nDK-1264&nbsp;...",
+   "cacheId": "zKuA1LPGOcIJ",
+   "formattedUrl": "restaurantpluto.dk/gorilla/?lang=en",
+   "htmlFormattedUrl": "restaurantpluto.dk/\u003cb\u003egorilla\u003c/b\u003e/?lang=en",
+   "pagemap": {
+    "cse_thumbnail": [
+     {
+      "width": "213",
+      "height": "237",
+      "src": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQFu9sUTjsODne-7W9h7d0kIEAfdmfQRWdxPNRvZisw1HSCP7CMRK0eHhv_"
+     }
+    ],
+    "metatags": [
+     {
+      "viewport": "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+     }
+    ],
+    "cse_image": [
+     {
+      "src": "http://restaurantpluto.dk/gorilla/wp-content/uploads/sites/4/2016/05/rekk.png"
+     }
+    ]
+   }
+  },
+  {
+   "kind": "customsearch#result",
+   "title": "Gorilla | Species | WWF",
+   "htmlTitle": "\u003cb\u003eGorilla\u003c/b\u003e | Species | WWF",
+   "link": "https://www.worldwildlife.org/species/gorilla",
+   "displayLink": "www.worldwildlife.org",
+   "snippet": "Gorillas are charismatic, intelligent, and in danger. Learn more and help WWF \nfight habitat destruction and poaching of our ape cousins.",
+   "htmlSnippet": "\u003cb\u003eGorillas\u003c/b\u003e are charismatic, intelligent, and in danger. Learn more and help WWF \u003cbr\u003e\nfight habitat destruction and poaching of our ape cousins.",
+   "cacheId": "tjd1zw4MMpIJ",
+   "formattedUrl": "https://www.worldwildlife.org/species/gorilla",
+   "htmlFormattedUrl": "https://www.worldwildlife.org/species/\u003cb\u003egorilla\u003c/b\u003e",
+   "pagemap": {
+    "cse_thumbnail": [
+     {
+      "width": "290",
+      "height": "174",
+      "src": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSsMBkb2KcOD5wLUXBhteffVzesfMzZU_vWWhJLmrVcScULNhcDftLHw6Y-"
+     }
+    ],
+    "metatags": [
+     {
+      "viewport": "width=device-width, initial-scale=1.0",
+      "og:url": "https://www.worldwildlife.org/species/gorilla/",
+      "og:image": "http://assets.worldwildlife.org/photos/1106/images/story_full_width/MID_287234.jpg?1345537599",
+      "og:image:width": "2700",
+      "og:image:height": "1792",
+      "og:title": "Gorilla | Species | WWF",
+      "og:site_name": "World Wildlife Fund",
+      "fb:app_id": "643916752395762",
+      "og:type": "website",
+      "twitter:card": "summary_large_image",
+      "twitter:url": "https://www.worldwildlife.org/species/gorilla/",
+      "twitter:image": "http://assets.worldwildlife.org/photos/1106/images/story_full_width/MID_287234.jpg?1345537599",
+      "twitter:title": "Gorilla | Species | WWF",
+      "twitter:site": "@world_wildlife",
+      "twitter:site:id": "16029780",
+      "og:description": "Gorillas are charismatic, intelligent, and in danger. Learn more and help WWF fight habitat destruction and poaching of our ape cousins.",
+      "twitter:description": "Gorillas are charismatic, intelligent, and in danger. Learn more and help WWF fight habitat destruction and poaching of our ape cousins.",
+      "csrf-param": "authenticity_token",
+      "csrf-token": "xu2+G4hha2rHs+iJMt4l3N1cArF1G0GYlJXUDCpHfDf1sDFAotpnYcRPvF98rpNRaOSwIKdVom0txADjLg6AFw=="
+     }
+    ],
+    "cse_image": [
+     {
+      "src": "http://assets.worldwildlife.org/photos/1106/images/story_full_width/MID_287234.jpg?1345537599"
+     }
+    ]
+   }
+  },
+  {
+   "kind": "customsearch#result",
+   "title": "Did you know there's a talking gorilla? | #TalkingGorilla | BBC ...",
+   "htmlTitle": "Did you know there&#39;s a talking \u003cb\u003egorilla\u003c/b\u003e? | #TalkingGorilla | BBC ...",
+   "link": "https://www.youtube.com/watch?v=s1HcU7taTbo",
+   "displayLink": "www.youtube.com",
+   "snippet": "Jun 13, 2016 ... Meet Koko, a western lowland gorilla who has been taught sign language. She's \nmaking us question what we think we know about animal ...",
+   "htmlSnippet": "Jun 13, 2016 \u003cb\u003e...\u003c/b\u003e Meet Koko, a western lowland \u003cb\u003egorilla\u003c/b\u003e who has been taught sign language. She&#39;s \u003cbr\u003e\nmaking us question what we think we know about animal&nbsp;...",
+   "cacheId": "rg2OzumQkjkJ",
+   "formattedUrl": "https://www.youtube.com/watch?v=s1HcU7taTbo",
+   "htmlFormattedUrl": "https://www.youtube.com/watch?v=s1HcU7taTbo",
+   "pagemap": {
+    "cse_thumbnail": [
+     {
+      "width": "300",
+      "height": "168",
+      "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRI9BdY4jyTJF2E5yT_qwdW3Zrabnh5Vuxs2fOD0utXdKmxr1OgzxkjpRk"
+     }
+    ],
+    "metatags": [
+     {
+      "title": "Did you know there's a talking gorilla? | #TalkingGorilla | BBC",
+      "theme-color": "#ff0000",
+      "og:site_name": "YouTube",
+      "og:url": "https://www.youtube.com/watch?v=s1HcU7taTbo",
+      "og:title": "Did you know there's a talking gorilla? | #TalkingGorilla | BBC",
+      "og:image": "https://i.ytimg.com/vi/s1HcU7taTbo/maxresdefault.jpg",
+      "og:description": "Meet Koko, a western lowland gorilla who has been taught sign language. She's making us question what we think we know about animal intelligence. Join in the...",
+      "al:ios:app_store_id": "544007664",
+      "al:ios:app_name": "YouTube",
+      "al:ios:url": "vnd.youtube://www.youtube.com/watch?v=s1HcU7taTbo&feature=applinks",
+      "al:android:url": "vnd.youtube://www.youtube.com/watch?v=s1HcU7taTbo&feature=applinks",
+      "al:android:app_name": "YouTube",
+      "al:android:package": "com.google.android.youtube",
+      "al:web:url": "https://www.youtube.com/watch?v=s1HcU7taTbo&feature=applinks",
+      "og:type": "video.other",
+      "og:video:url": "https://www.youtube.com/embed/s1HcU7taTbo",
+      "og:video:secure_url": "https://www.youtube.com/embed/s1HcU7taTbo",
+      "og:video:type": "text/html",
+      "og:video:width": "1280",
+      "og:video:height": "720",
+      "og:video:tag": "BBC"
+     }
+    ],
+    "videoobject": [
+     {
+      "url": "https://www.youtube.com/watch?v=s1HcU7taTbo",
+      "name": "Did you know there's a talking gorilla? | #TalkingGorilla | BBC",
+      "description": "Meet Koko, a western lowland gorilla who has been taught sign language. She's making us question what we think we know about animal intelligence. Join in the...",
+      "paid": "False",
+      "channelid": "UCwmZiChSryoWQCZMIQezgTg",
+      "videoid": "s1HcU7taTbo",
+      "duration": "PT2M57S",
+      "unlisted": "False",
+      "thumbnailurl": "https://i.ytimg.com/vi/s1HcU7taTbo/maxresdefault.jpg",
+      "embedurl": "https://www.youtube.com/embed/s1HcU7taTbo",
+      "playertype": "HTML5 Flash",
+      "width": "1280",
+      "height": "720",
+      "isfamilyfriendly": "True",
+      "regionsallowed": "AD,AE,AF,AG,AI,AL,AM,AO,AQ,AR,AS,AT,AU,AW,AX,AZ,BA,BB,BD,BE,BF,BG,BH,BI,BJ,BL,BM,BN,BO,BQ,BR,BS,BT,BV,BW,BY,BZ,CA,CC,CD,CF,CG,CH,CI,CK,CL,CM,CN,CO,CR,CU,CV,CW,CX,CY,CZ,DE,DJ,DK,DM,DO,DZ,EC,EE,EG,EH...",
+      "interactioncount": "13323108",
+      "datepublished": "2016-06-13",
+      "genre": "Pets & Animals"
+     }
+    ],
+    "imageobject": [
+     {
+      "url": "https://i.ytimg.com/vi/s1HcU7taTbo/maxresdefault.jpg",
+      "width": "1280",
+      "height": "720"
+     }
+    ],
+    "person": [
+     {
+      "url": "http://www.youtube.com/user/BBCEarth"
+     },
+     {
+      "url": "https://plus.google.com/104805023169549190046"
+     }
+    ],
+    "cse_image": [
+     {
+      "src": "https://i.ytimg.com/vi/s1HcU7taTbo/maxresdefault.jpg"
+     }
+    ]
+   }
+  },
+  {
+   "kind": "customsearch#result",
+   "title": "Gorilla Technology",
+   "htmlTitle": "\u003cb\u003eGorilla\u003c/b\u003e Technology",
+   "link": "https://www.gorilla-technology.com/",
+   "displayLink": "www.gorilla-technology.com",
+   "snippet": "Video IoT Platform Expand Your Business with VeMo.",
+   "htmlSnippet": "Video IoT Platform Expand Your Business with VeMo.",
+   "cacheId": "bzmbbBaeoJQJ",
+   "formattedUrl": "https://www.gorilla-technology.com/",
+   "htmlFormattedUrl": "https://www.\u003cb\u003egorilla\u003c/b\u003e-technology.com/",
+   "pagemap": {
+    "cse_thumbnail": [
+     {
+      "width": "299",
+      "height": "168",
+      "src": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSjUfFcd6nKksbu0jO7awVkn_Sd0OKaTPdzFg1TxHIfkhCFo4xZy2Q94Y47"
+     }
+    ],
+    "metatags": [
+     {
+      "og:title": "Transform Your Business with Video Analytics and IoT Technology",
+      "og:description": "Discover our Video IoT Platform",
+      "og:site_name": "Gorilla Technology Group",
+      "og:locale": "en_us",
+      "og:image": "https://www.gorilla-technology.com/img/gorilla-index-thumbnail.jpg",
+      "og:image:alt": "Gorilla Technology Group",
+      "og:url": "https://www.gorilla-technology.com",
+      "og:type": "website",
+      "viewport": "width=device-width, initial-scale=1",
+      "msapplication-tilecolor": "#ffffff",
+      "msapplication-tileimage": "/img/ms-icon/144x144/gorilla-technology-group-ms-icon.png",
+      "theme-color": "#ffffff"
+     }
+    ],
+    "cse_image": [
+     {
+      "src": "https://www.gorilla-technology.com/img/gorilla-index-thumbnail.jpg"
+     }
+    ]
+   }
+  },
+  {
+   "kind": "customsearch#result",
+   "title": "Gorilla | San Diego Zoo Animals & Plants",
+   "htmlTitle": "\u003cb\u003eGorilla\u003c/b\u003e | San Diego Zoo Animals &amp; Plants",
+   "link": "http://animals.sandiegozoo.org/animals/gorilla",
+   "displayLink": "animals.sandiegozoo.org",
+   "snippet": "Gorilla food includes leaves, stems, fruits, seeds, roots, ants, and termites. Unlike \nchimpanzees, gorillas don't use tools to get those termites; instead, they just ...",
+   "htmlSnippet": "\u003cb\u003eGorilla\u003c/b\u003e food includes leaves, stems, fruits, seeds, roots, ants, and termites. Unlike \u003cbr\u003e\nchimpanzees, \u003cb\u003egorillas\u003c/b\u003e don&#39;t use tools to get those termites; instead, they just&nbsp;...",
+   "cacheId": "fPpCZ9yYB9YJ",
+   "formattedUrl": "animals.sandiegozoo.org/animals/gorilla",
+   "htmlFormattedUrl": "animals.sandiegozoo.org/animals/\u003cb\u003egorilla\u003c/b\u003e",
+   "pagemap": {
+    "cse_thumbnail": [
+     {
+      "width": "300",
+      "height": "168",
+      "src": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQnI9e_Xyg-P4PqcNWEJJjeGFviA8hEvgJ3KX2cWBzxXHJgJ111oxz3O8tY"
+     }
+    ],
+    "metatags": [
+     {
+      "mobileoptimized": "width",
+      "handheldfriendly": "true",
+      "viewport": "width=device-width, initial-scale=1.0"
+     }
+    ],
+    "cse_image": [
+     {
+      "src": "http://animals.sandiegozoo.org/sites/default/files/2016-09/animals_hero_gorilla2.jpg"
+     }
+    ]
+   }
+  },
+  {
+   "kind": "customsearch#result",
+   "title": "GOrilla - a tool for identifying enriched GO terms",
+   "htmlTitle": "\u003cb\u003eGOrilla\u003c/b\u003e - a tool for identifying enriched GO terms",
+   "link": "http://cbl-gorilla.cs.technion.ac.il/",
+   "displayLink": "cbl-gorilla.cs.technion.ac.il",
+   "snippet": "GOrilla is a tool for identifying and visualizing enriched GO terms in ranked lists of \ngenes. It can be run in one of two modes: Searching for enriched GO terms ...",
+   "htmlSnippet": "\u003cb\u003eGOrilla\u003c/b\u003e is a tool for identifying and visualizing enriched GO terms in ranked lists of \u003cbr\u003e\ngenes. It can be run in one of two modes: Searching for enriched GO terms&nbsp;...",
+   "cacheId": "Zag8b8t531sJ",
+   "formattedUrl": "cbl-gorilla.cs.technion.ac.il/",
+   "htmlFormattedUrl": "cbl-\u003cb\u003egorilla\u003c/b\u003e.cs.technion.ac.il/",
+   "pagemap": {
+    "cse_thumbnail": [
+     {
+      "width": "184",
+      "height": "157",
+      "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5Pu_rVwbzq28XoIco46L_JTxjZLwJAVW53im8g7P-L7wcgpy__2V5Lr8"
+     }
+    ],
+    "cse_image": [
+     {
+      "src": "http://cbl-gorilla.cs.technion.ac.il/pics/smallTree.jpg"
+     }
+    ]
+   }
+  }
+ ]
+}

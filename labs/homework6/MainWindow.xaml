@@ -1,0 +1,21 @@
+﻿<Window x:Class="homework6.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:homework6"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="358,368,0,0" TextWrapping="Wrap" Text="gorilla" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="label" Content="Label" HorizontalAlignment="Left" Margin="53,368,0,0" VerticalAlignment="Top"/>
+        <Image x:Name="image" HorizontalAlignment="Left" Height="100" Margin="293,92,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="1.156,0.641"/>
+        <Button Content="Google it!" HorizontalAlignment="Left" Margin="528,368,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <Image x:Name="image1" HorizontalAlignment="Left" Height="294" Margin="224,54,0,0" VerticalAlignment="Top" Width="367" RenderTransformOrigin="0.259,0.298"/>
+        <Image x:Name="image2" HorizontalAlignment="Left" Height="100" Margin="85,151,0,0" VerticalAlignment="Top" Width="100"/>
+        <Image x:Name="image3" HorizontalAlignment="Left" Height="100" Margin="635,151,0,0" VerticalAlignment="Top" Width="100"/>
+        <Button x:Name="button_previous" Content="" HorizontalAlignment="Left" Margin="10,129,0,0" VerticalAlignment="Top" Width="24" Height="136" Click="button_previous_Click"/>
+        <Button x:Name="button_next" Content=">>" HorizontalAlignment="Left" Margin="758,129,0,0" VerticalAlignment="Top" Width="24" Height="136" Click="button_next_Click"/>
+
+    </Grid>
+</Window>
