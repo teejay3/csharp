@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfWord xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Word id="0" English_x0020_word="a bit" Translation="немного" Word_x0020_type="noun" />
+  <Word id="1" English_x0020_word="a long way" Translation="далеко" Word_x0020_type="noun" />
+  <Word id="2" English_x0020_word="abandonment" Translation="оставление;оставление жены;запущенность" Word_x0020_type="noun" />
+  <Word id="41" English_x0020_word="abashed" Translation="смущённый;сконфуженный" Word_x0020_type="adjective" />
+  <Word id="42" English_x0020_word="abbreviate" Translation="сокращать" Word_x0020_type="verb" />
+  <Word id="3" English_x0020_word="abdicate" Translation="отрекаться;отказываться" Word_x0020_type="verb" />
+  <Word id="4" English_x0020_word="abhorrent" Translation="отвратительный;гнусный" Word_x0020_type="adjective" />
+  <Word id="43" English_x0020_word="abide" Translation="придерживаться;выполнять (обещания)" Word_x0020_type="verb" />
+  <Word id="44" English_x0020_word="abominate" Translation="питать отвращение;ненавидеть" Word_x0020_type="verb" />
+  <Word id="45" English_x0020_word="above all" Translation="самое главное" Word_x0020_type="noun" />
+  <Word id="46" English_x0020_word="affordable" Translation="возможный;допустимый" Word_x0020_type="adjective" />
+  <Word id="47" English_x0020_word="aforegoing" Translation="предшествующий" Word_x0020_type="adjective" />
+  <Word id="48" English_x0020_word="agility" Translation="проворство;быстрота" Word_x0020_type="noun" />
+  <Word id="49" English_x0020_word="agonic" Translation="не образующий угла" Word_x0020_type="adjective" />
+  <Word id="50" English_x0020_word="aimless" Translation="бесцельный" Word_x0020_type="adjective" />
+  <Word id="51" English_x0020_word="aspire" Translation="стремиться" Word_x0020_type="verb" />
+  <Word id="52" English_x0020_word="assert" Translation="утверждать;заявлять" Word_x0020_type="verb" />
+  <Word id="53" English_x0020_word="autumnal" Translation="осенний" Word_x0020_type="adjective" />
+  <Word id="54" English_x0020_word="avenger" Translation="мститель" Word_x0020_type="noun" />
+  <Word id="55" English_x0020_word="await" Translation="ждать;ожидать" Word_x0020_type="verb" />
+  <Word id="56" English_x0020_word="awful" Translation="ужасный;внушающий страх" Word_x0020_type="adjective" />
+  <Word id="57" English_x0020_word="awl" Translation="шило" Word_x0020_type="noun" />
+  <Word id="58" English_x0020_word="back burner" Translation="задняя конфорка;второе место" Word_x0020_type="noun" />
+  <Word id="59" English_x0020_word="backhand" Translation="удар слева (в теннисе)" Word_x0020_type="noun" />
+  <Word id="60" English_x0020_word="backmost" Translation="самый задний" Word_x0020_type="adjective" />
+  <Word id="61" English_x0020_word="backpack" Translation="рюкзак" Word_x0020_type="noun" />
+  <Word id="62" English_x0020_word="backstitch" Translation="строчка" Word_x0020_type="noun" />
+  <Word id="63" English_x0020_word="baffler" Translation="отражатель;перегородка;глушитель" Word_x0020_type="noun" />
+  <Word id="64" English_x0020_word="bagpiper" Translation="волынщик" Word_x0020_type="noun" />
+  <Word id="65" English_x0020_word="bailsman" Translation="поручитель" Word_x0020_type="noun" />
+  <Word id="66" English_x0020_word="bake" Translation="печь(ся);сушить на солнце;запекаться" Word_x0020_type="verb" />
+  <Word id="67" English_x0020_word="bakery" Translation="пекарня;булочная" Word_x0020_type="noun" />
+  <Word id="68" English_x0020_word="beatify" Translation="делать счастливым" Word_x0020_type="verb" />
+  <Word id="69" English_x0020_word="becalm" Translation="успокаивать" Word_x0020_type="verb" />
+  <Word id="70" English_x0020_word="bedeck" Translation="украшать" Word_x0020_type="verb" />
+  <Word id="71" English_x0020_word="beef-witted" Translation="глупый;тупоумный" Word_x0020_type="adjective" />
+  <Word id="72" English_x0020_word="beehive" Translation="улей" Word_x0020_type="noun" />
+  <Word id="73" English_x0020_word="belittle" Translation="умалять;преуменьшать;принижать" Word_x0020_type="verb" />
+  <Word id="74" English_x0020_word="belt" Translation="пояс;ремень;портупея" Word_x0020_type="noun" />
+  <Word id="75" English_x0020_word="benediction" Translation="благословение" Word_x0020_type="noun" />
+  <Word id="76" English_x0020_word="beneficent" Translation="благодетельный;благотворный" Word_x0020_type="adjective" />
+  <Word id="77" English_x0020_word="besot" Translation="опьянять;кружить голову" Word_x0020_type="verb" />
+  <Word id="78" English_x0020_word="boastful" Translation="хвастливый" Word_x0020_type="adjective" />
+  <Word id="79" English_x0020_word="bodiless" Translation="бестелесный" Word_x0020_type="adjective" />
+  <Word id="80" English_x0020_word="boldly" Translation="смело;нагло" Word_x0020_type="adjective" />
+  <Word id="81" English_x0020_word="boreal" Translation="северный" Word_x0020_type="adjective" />
+  <Word id="82" English_x0020_word="boredom" Translation="скука" Word_x0020_type="noun" />
+  <Word id="83" English_x0020_word="borrower" Translation="заимодавец;кредитор" Word_x0020_type="noun" />
+  <Word id="84" English_x0020_word="botanize" Translation="ботанизировать" Word_x0020_type="verb" />
+  <Word id="85" English_x0020_word="branchial" Translation="жаберный;жабровидный" Word_x0020_type="adjective" />
+  <Word id="86" English_x0020_word="bread-crumb" Translation="хлебный мякиш;крошки хлеба" Word_x0020_type="noun" />
+  <Word id="87" English_x0020_word="buckshot" Translation="картечь;крупная дробь" Word_x0020_type="noun" />
+  <Word id="88" English_x0020_word="bullfight" Translation="бой быков" Word_x0020_type="noun" />
+  <Word id="89" English_x0020_word="buyer" Translation="покупатель" Word_x0020_type="noun" />
+  <Word id="90" English_x0020_word="bystreet" Translation="переулок;улочка" Word_x0020_type="noun" />
+  <Word id="91" English_x0020_word="caff" Translation="забегаловка" Word_x0020_type="noun" />
+  <Word id="92" English_x0020_word="call sign" Translation="позывной" Word_x0020_type="noun" />
+  <Word id="93" English_x0020_word="cancellated" Translation="решетчатый;сетчатый" Word_x0020_type="adjective" />
+  <Word id="94" English_x0020_word="cannabic" Translation="конопляный;пеньковый" Word_x0020_type="adjective" />
+  <Word id="95" English_x0020_word="capacious" Translation="просторный;вместительный" Word_x0020_type="adjective" />
+  <Word id="96" English_x0020_word="capitalistic" Translation="капиталистический" Word_x0020_type="adjective" />
+  <Word id="97" English_x0020_word="carbine" Translation="карабин" Word_x0020_type="noun" />
+  <Word id="98" English_x0020_word="carbonic" Translation="угольный;углеродный;углеродистый" Word_x0020_type="adjective" />
+  <Word id="99" English_x0020_word="carnal" Translation="плотский;чувственный" Word_x0020_type="adjective" />
+  <Word id="100" English_x0020_word="carotid" Translation="сонная артерия" Word_x0020_type="noun" />
+  <Word id="101" English_x0020_word="carpenter" Translation="плотник" Word_x0020_type="noun" />
+  <Word id="103" English_x0020_word="corner" Translation="угол" Word_x0020_type="noun" />
+  <Word id="5" English_x0020_word="field" Translation="поле;луг;большое пространство" Word_x0020_type="noun" />
+  <Word id="6" English_x0020_word="fieldfare" Translation="дрозд-рябинник" Word_x0020_type="noun" />
+  <Word id="7" English_x0020_word="infatuated" Translation="ослепленный;влюбленный до безумия" Word_x0020_type="adjective" />
+  <Word id="8" English_x0020_word="inferior" Translation="подчиненный" Word_x0020_type="noun" />
+  <Word id="9" English_x0020_word="infinite" Translation="бесконечность;бесчисленный" Word_x0020_type="noun" />
+  <Word id="10" English_x0020_word="know-all" Translation="всезнайка" Word_x0020_type="noun" />
+  <Word id="11" English_x0020_word="knuckleduster" Translation="кастет" Word_x0020_type="noun" />
+  <Word id="12" English_x0020_word="labelled" Translation="маркированный" Word_x0020_type="adjective" />
+  <Word id="13" English_x0020_word="lacerated" Translation="рваный" Word_x0020_type="adjective" />
+  <Word id="14" English_x0020_word="lactic" Translation="молочный" Word_x0020_type="adjective" />
+  <Word id="15" English_x0020_word="lame" Translation="хромой;увечный;парализованный" Word_x0020_type="adjective" />
+  <Word id="16" English_x0020_word="lance-sergeant" Translation="младший сержант" Word_x0020_type="noun" />
+  <Word id="17" English_x0020_word="language" Translation="язык;речь" Word_x0020_type="noun" />
+  <Word id="104" English_x0020_word="mayor" Translation="мэр" Word_x0020_type="noun" />
+  <Word id="18" English_x0020_word="paint stripper" Translation="жидкость для снятия краски" Word_x0020_type="noun" />
+  <Word id="19" English_x0020_word="pale" Translation="кол;свая;частокол;ограда" Word_x0020_type="noun" />
+  <Word id="20" English_x0020_word="radiation hazard" Translation="опасность поражения лучевой болезнью" Word_x0020_type="noun" />
+  <Word id="21" English_x0020_word="radiativ" Translation="излучающий" Word_x0020_type="noun" />
+  <Word id="22" English_x0020_word="railing" Translation="ограда;перила" Word_x0020_type="noun" />
+  <Word id="23" English_x0020_word="rake away" Translation="отгребать;выгребать" Word_x0020_type="noun" />
+  <Word id="24" English_x0020_word="ramble" Translation="прогулка;поездка" Word_x0020_type="noun" />
+  <Word id="25" English_x0020_word="ramp" Translation="скат;уклон;наклонная плоскость" Word_x0020_type="noun" />
+  <Word id="102" English_x0020_word="sharp" Translation="острый" Word_x0020_type="noun" />
+  <Word id="26" English_x0020_word="slate-pencil" Translation="грифель" Word_x0020_type="noun" />
+  <Word id="27" English_x0020_word="slavery" Translation="рабство" Word_x0020_type="noun" />
+  <Word id="28" English_x0020_word="sleeky" Translation="гладкий;прилизанный" Word_x0020_type="adjective" />
+  <Word id="29" English_x0020_word="thunder-peal" Translation="раскат грома" Word_x0020_type="noun" />
+  <Word id="30" English_x0020_word="thunderstruk" Translation="ошеломленный;оглушенный" Word_x0020_type="adjective" />
+  <Word id="31" English_x0020_word="tig" Translation="прикосновение" Word_x0020_type="noun" />
+  <Word id="32" English_x0020_word="wash overboard" Translation="смыть за борт" Word_x0020_type="noun" />
+  <Word id="33" English_x0020_word="waterfall" Translation="водопад" Word_x0020_type="noun" />
+  <Word id="34" English_x0020_word="waterscape" Translation="морской пейзаж" Word_x0020_type="noun" />
+  <Word id="35" English_x0020_word="wave down" Translation="голосовать;ловить машину" Word_x0020_type="verb" />
+  <Word id="36" English_x0020_word="waved" Translation="волнистый" Word_x0020_type="adjective" />
+  <Word id="37" English_x0020_word="wealthy" Translation="богатый;состоятельный" Word_x0020_type="adjective" />
+  <Word id="38" English_x0020_word="wharf" Translation="пристань;причал" Word_x0020_type="noun" />
+  <Word id="39" English_x0020_word="what for" Translation="зачем" Word_x0020_type="noun" />
+  <Word id="40" English_x0020_word="whelk" Translation="прыщ" Word_x0020_type="noun" />
+</ArrayOfWord>
