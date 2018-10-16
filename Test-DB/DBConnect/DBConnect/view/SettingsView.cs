@@ -46,12 +46,12 @@ namespace DBConnect
                 ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
 
             config.AppSettings.Settings.Add("ModificationDate", DateTime.Now.ToLongTimeString() + " ");
-            config.AppSettings.Settings["User name"].Value = textLogin.Text;
-            config.AppSettings.Settings["Initial catalog"].Value = textPort.Text;
-            config.AppSettings.Settings["Password"].Value = textPasswd.Text;
-            config.AppSettings.Settings["Data source"].Value = textSrvName.Text;
+            config.AppSettings.Settings["User name"].Value = textLogin.Text.Trim();
+            config.AppSettings.Settings["Initial catalog"].Value = textPort.Text.Trim();
+            config.AppSettings.Settings["Password"].Value = textPasswd.Text.Trim();
+            config.AppSettings.Settings["Data source"].Value = textSrvName.Text.Trim();
 
-            config.Save(ConfigurationSaveMode.Full, true);
+            config.Save(ConfigurationSaveMode.Full, true);  //try catch
             ConfigurationManager.RefreshSection("appSettings");
             Hide();
         }

@@ -1,42 +1,48 @@
-﻿using DBConnect.model;
+﻿using DBConnect.controller;
+using DBConnect.model;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Data.Common;
 using System.Data.SqlClient;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace DBConnect.view
 {
-    public partial class StuffView : Form
+    partial class StuffView : MyView
     {
         private List<Department> departments;
         private List<Employee> emps;
-        private const string getDepartments = "Select * from Department";
-//        private const string getEmployees = "select ID as 'ИД', FirstName as 'Имя', SurName as 'Фамилия', Patronymic as 'Отчество',"
-//                +" Position as 'Должность', DocSeries as 'Серия док.', DocNumber as 'Номер док.',"
-//                +" DateOfBirth as 'Дата рождения', datediff(mm, dateofbirth, getdate()) / 12 as 'Возраст, лет' from Empoyee";
-        private const string getEmployees = "select ID as 'ИД', FirstName as 'Имя', SurName as 'Фамилия', Patronymic as 'Отчество',"
-                + " Position as 'Должность', cast(datediff(mm, dateofbirth, getdate()) / 12 as int) as 'Возраст, лет'"
-                + " from Empoyee";
-        private const string deleteItem = "delete from empoyee where id =";
-        private const string getEmployeeData = "select ID, FirstName, SurName, Patronymic, FORMAT(DateOfBirth,'yyyy-MM-dd') as DateOfBirth, DocSeries, DocNumber, Position, DepartmentID from empoyee where id=";
+        private StuffController stuffController;
         private int rowID;
         public StuffView()
         {
             InitializeComponent();
-            Init();
+            try
+            {
+                Init();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка: " + ex.Message,
+                        "Ошибка инициализации",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+            }
         }
         private void Init()
         {
-            
+            this.stuffController = new StuffController();
+            departments = new List<Department>();
+            emps = new List<Employee>();
             deleteButton.Enabled    = false;
             saveButton.Enabled      = false;
             addButton.Enabled       = false;
             deptComboBox.Enabled    = false;
 
             dataGridView1.ReadOnly = true;
-            
+
+            this.FormClosed += (o, e) => { this.Dispose(); };
             comboBox1.SelectedValueChanged += (o, e) => {
                 UpdateGrid();
                 deleteButton.Enabled    = false;
@@ -44,10 +50,9 @@ namespace DBConnect.view
                 addButton.Enabled       = false;
                 deptComboBox.Enabled    = false;
             };
-            showAllButton.Click += (o, e) => { FillGrid(getEmployees); };
+            showAllButton.Click += (o, e) => { FillGrid(Employee.getEmployees); };
             dataGridView1.CellClick += (o, e) => 
             {
-
                 string idStr = "0";
                 try
                 {
@@ -59,7 +64,6 @@ namespace DBConnect.view
                 }
                 if (rowID > 0)
                 {
-                    
                     deleteButton.Enabled    = true;
                     saveButton.Enabled      = true;
                     addButton.Enabled       = false;
@@ -78,6 +82,7 @@ namespace DBConnect.view
             };
             refreshButton.Click += (o, e) => 
             {
+                GetDepartments();
                 UpdateGrid();
                 ClearEdits();
                 deleteButton.Enabled = false;
@@ -88,35 +93,37 @@ namespace DBConnect.view
             addButton.Click += (o, e) => { InsertItem(); };
             saveButton.Click += (o, e) => { UpdateItem(); };
             deleteButton.Click += (o, e) => { DeleteItem(); };
-            departments = new List<Department>();
-            emps = new List<Employee>();
-            departments = GetDepartments();
-            if (departments.Count != 0) { UpdateComboBox(); }
-            else {
+            GetDepartments();
+            if (departments == null)
+            {
                 MessageBox.Show("Критическая ошибка: невозможно загрузить список подразделений или он пуст",
                                         "Ошибка",
                                         MessageBoxButtons.OK,
                                         MessageBoxIcon.Error);
                 this.Close();
             }
-            FillGrid(getEmployees);
         }
-        private List<Department> GetDepartments()
+        private void GetDepartments()
         {
-            List<Department> result = new List<Department>();
-            using (DBUtil util = new DBUtil())
+            departments.Clear();
+            try
             {
-                DbDataReader reader = util.GetDbDataReader(getDepartments);
-                while (reader.Read())
+                departments = stuffController.GetDepartments();
+                if (departments == null) throw new Exception("Спсок департаментов не получен");
+                if (departments.Count != 0)
                 {
-                    result.Add(new Department( (System.Guid)reader["ID"],
-                                                    //(System.Guid)reader["ParentDepartmentID"],
-                                                    (string)reader["Code"],
-                                                    (string)reader["Name"])
-                                    );
+                    UpdateComboBox();
+                }
+                else
+                {
+                    statusLabel.Text = "Ошибка получения списка подразделений";
                 }
             }
-            return result;
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            
         }
         private void UpdateComboBox()
         {
@@ -126,24 +133,19 @@ namespace DBConnect.view
             comboBox1.DisplayMember = "UniqueDept";
             comboBox1.ValueMember   = "ID";
 
-            deptComboBox.DataSource = departments;
-            deptComboBox.DisplayMember = "UniqueDept";
-            deptComboBox.ValueMember = "ID";
+            BindingSource bs2           = new BindingSource();
+            bs2.DataSource              = departments;
+            deptComboBox.DataSource     = bs2;
+            deptComboBox.DisplayMember  = "UniqueDept";
+            deptComboBox.ValueMember    = "ID";
         }
-
         private void FillGrid(string sqlRequest)
         {
-            DataSet sds;
-            SqlDataAdapter dataAdapter;
-            DataTable table;
-            using (DBUtil util = new DBUtil())
+            DataSet sds = stuffController.GridData(sqlRequest);
+            if (sds == null)
             {
-                SqlCommand sCommand = new SqlCommand(sqlRequest, util.GetDBConnection());
-                dataAdapter = new SqlDataAdapter(sCommand);
-                SqlCommandBuilder sBuilder = new SqlCommandBuilder(dataAdapter);
-                sds = new DataSet();
-                dataAdapter.Fill(sds, "Empoyee");
-                table = sds.Tables["Empoyee"];
+                statusLabel.Text = "Ошибка обновления";
+                return;
             }
             dataGridView1.DataSource = sds.Tables["Empoyee"];
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -152,161 +154,122 @@ namespace DBConnect.view
         private void UpdateGrid()
         {
             Department dept = (Department)comboBox1.SelectedItem;
-            string sql = getEmployees + " where departmentid = '" + dept.ID + "'";
+            string sql = Employee.getEmployees + " where departmentid = '" + dept.ID + "'";
             FillGrid(sql);
         }
         private void UpdateItem()
         {
             if (ValidateEdits())
             {
-                string sqlUpdate = "update empoyee set " +
-                    " FirstName=@firstname" +
-                    ", SurName=@surname" +
-                    ", Patronymic=@patronymic" +
-                    ", DateOfBirth=@dateofbirth" +
-                    ", DocSeries=@docseries" +
-                    ", DocNumber=@docnumber" +
-                    ", Position=@position" +
-                    ", DepartmentID=@departmentid " +
-                    "where ID =" + rowID;
-                
-                using (DBUtil util = new DBUtil())
-                {
-                        Department dept = (Department)deptComboBox.SelectedItem;
-                        SqlCommand cmd = new SqlCommand(sqlUpdate, util.GetDBConnection());
-                        util.OpenConnection();
-                        cmd.Parameters.AddWithValue("@firstname", firstnameBox.Text.Trim());
-                        cmd.Parameters.AddWithValue("@surname", surnameBox.Text.Trim());
-                        cmd.Parameters.AddWithValue("@patronymic", patronymicBox.Text.Trim());
-                        cmd.Parameters.AddWithValue("@dateofbirth", Convert.ToDateTime(dobBox.Text));
-                        cmd.Parameters.AddWithValue("@docseries", docseriesBox.Text.Trim());
-                        cmd.Parameters.AddWithValue("@docnumber", docnumberBox.Text.Trim());
-                        cmd.Parameters.AddWithValue("@position", positionBox.Text.Trim());
-                        cmd.Parameters.AddWithValue("@departmentid", dept.ID);
-                    try
-                    {
-                        cmd.ExecuteNonQuery();
-                    }
-                    catch (InvalidCastException ex)
-                    {
+                List<SqlParameter> list = new List<SqlParameter>();
+                SqlParameter firstname = new SqlParameter("@firstname", SqlDbType.NVarChar);
+                firstname.Value = firstnameBox.Text.Trim();
+                list.Add(firstname);
+                SqlParameter surname = new SqlParameter("@surname", SqlDbType.NVarChar);
+                surname.Value = surnameBox.Text.Trim();
+                list.Add(surname);
+                SqlParameter patronymic = new SqlParameter("@patronymic", SqlDbType.NVarChar);
+                patronymic.IsNullable = true;
+                patronymic.Value = patronymicBox.Text.Trim();
+                list.Add(patronymic);
+                SqlParameter dateofdirth = new SqlParameter("@dateofbirth", SqlDbType.DateTime);
+                dateofdirth.Value = Convert.ToDateTime(dobBox.Text);
+                list.Add(dateofdirth);
+                SqlParameter docseries = new SqlParameter("@docseries", SqlDbType.NVarChar);
+                docseries.IsNullable = true;
+                docseries.Value = docseriesBox.Text.Trim();
+                list.Add(docseries);
+                SqlParameter docnumber = new SqlParameter("@docnumber", SqlDbType.NVarChar);
+                docnumber.IsNullable = true;
+                docnumber.Value = docnumberBox.Text.Trim();
+                list.Add(docnumber);
+                SqlParameter position = new SqlParameter("@position", SqlDbType.NVarChar);
+                position.Value = positionBox.Text.Trim();
+                list.Add(position);
+                SqlParameter parentid = new SqlParameter("@departmentid", SqlDbType.UniqueIdentifier);
+                Department dept = (Department)deptComboBox.SelectedItem;
+                parentid.Value = dept.ID;
+                list.Add(parentid);
+                SqlParameter id = new SqlParameter("@id", SqlDbType.Int);
+                id.Value = rowID;
+                list.Add(id);
 
-                        MessageBox.Show("Ошибка преобразования данных: " + ex.Message + ' ' + ex.TargetSite,
-                                           "Ошибка запроса",
-                                           MessageBoxButtons.OK,
-                                           MessageBoxIcon.Error);
-                        return;
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Ошибка выполнения запроса: " + ex.Message,
-                                           "Ошибка запроса",
-                                           MessageBoxButtons.OK,
-                                           MessageBoxIcon.Error);
-                        return;
-                    }
+                if (stuffController.RequestEmployee(Employee.updateEmployee, list))
+                {
+                    statusLabel.Text = "Запись " + idBox.Text + " обновлена";
                 }
-                statusLabel.Text = "Запись " + idBox.Text + " обновлена";
+                else
+                {
+                }
             }
             else
             {
-                statusLabel.Text += " проверьте введённый данные!";
             }
         }
         private void InsertItem()
         {
+            List<SqlParameter> list = new List<SqlParameter>();
             if (ValidateEdits())
             {
-                string sqlUpdate = "insert into empoyee values (" +
-                    " @firstname" +
-                    ", @surname" +
-                    ", @patronymic" +
-                    ", @dateofbirth" +
-                    ", @docseries" +
-                    ", @docnumber" +
-                    ", @position" +
-                    ", @departmentid )";
+                SqlParameter firstname = new SqlParameter("@firstname", SqlDbType.NVarChar);
+                firstname.Value = firstnameBox.Text.Trim();
+                list.Add(firstname);
+                SqlParameter surname = new SqlParameter("@surname", SqlDbType.NVarChar);
+                surname.Value = surnameBox.Text.Trim();
+                list.Add(surname);
+                SqlParameter patronymic = new SqlParameter("@patronymic", SqlDbType.NVarChar);
+                patronymic.IsNullable = true;
+                patronymic.Value = patronymicBox.Text.Trim();
+                list.Add(patronymic);
+                SqlParameter dateofdirth = new SqlParameter("@dateofbirth", SqlDbType.DateTime);
+                dateofdirth.Value = Convert.ToDateTime(dobBox.Text);
+                list.Add(dateofdirth);
+                SqlParameter docseries = new SqlParameter("@docseries", SqlDbType.NVarChar);
+                docseries.IsNullable = true;
+                docseries.Value = docseriesBox.Text.Trim();
+                list.Add(docseries);
+                SqlParameter docnumber = new SqlParameter("@docnumber", SqlDbType.NVarChar);
+                docnumber.IsNullable = true;
+                docnumber.Value = docnumberBox.Text.Trim();
+                list.Add(docnumber);
+                SqlParameter position = new SqlParameter("@position", SqlDbType.NVarChar);
+                position.Value = positionBox.Text.Trim();
+                list.Add(position);
+                SqlParameter parentid = new SqlParameter("@departmentid", SqlDbType.UniqueIdentifier);
+                Department dept = (Department)deptComboBox.SelectedItem;
+                parentid.Value = dept.ID;
+                list.Add(parentid);
 
-                using (DBUtil util = new DBUtil())
+                if (stuffController.RequestEmployee(Employee.insertEmployee, list))
                 {
-                    Department dept = (Department)deptComboBox.SelectedItem;
-                    SqlCommand cmd = new SqlCommand(sqlUpdate, util.GetDBConnection());
-                    util.OpenConnection();
-                    cmd.Parameters.AddWithValue("@firstname", firstnameBox.Text.Trim());
-                    cmd.Parameters.AddWithValue("@surname", surnameBox.Text.Trim());
-                    cmd.Parameters.AddWithValue("@patronymic", patronymicBox.Text.Trim());
-                    cmd.Parameters.AddWithValue("@dateofbirth", Convert.ToDateTime(dobBox.Text));
-                    cmd.Parameters.AddWithValue("@docseries", docseriesBox.Text.Trim());
-                    cmd.Parameters.AddWithValue("@docnumber", docnumberBox.Text.Trim());
-                    cmd.Parameters.AddWithValue("@position", positionBox.Text.Trim());
-                    cmd.Parameters.AddWithValue("@departmentid", dept.ID);
-                    try
-                    {
-                        cmd.ExecuteNonQuery();
-                    }
-                    catch (InvalidCastException ex)
-                    {
-
-                        MessageBox.Show("Ошибка преобразования данных: " + ex.Message + ' ' + ex.TargetSite,
-                                           "Ошибка запроса",
-                                           MessageBoxButtons.OK,
-                                           MessageBoxIcon.Error);
-                        return;
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Ошибка выполнения запроса: " + ex.Message,
-                                           "Ошибка запроса",
-                                           MessageBoxButtons.OK,
-                                           MessageBoxIcon.Error);
-                        return;
-                    }
+                    statusLabel.Text = "Новая запись добавлена";
                 }
-                statusLabel.Text = "Новая запись добавлена";
+                else
+                {
+                    statusLabel.Text = "Ошибка добавления записи";
+                }
             }
         }
         private void DeleteItem()
         {
-            try
+            SqlParameter id = new SqlParameter("@id", SqlDbType.Int);
+            id.Value = rowID;
+            List<SqlParameter> list = new List<SqlParameter>();
+            list.Add(id);
+            if (stuffController.RequestEmployee(Employee.deleteItem, list))
             {
-                DBUtil util = new DBUtil();
-            
-                string sqlDelItem = deleteItem + rowID;
-                SqlCommand cmd = new SqlCommand(sqlDelItem, util.GetDBConnection());
-                util.OpenConnection();
-                cmd.ExecuteNonQuery();
                 statusLabel.Text = "Сотрудник " + rowID + " удалён";
                 ClearEdits();
-                //UpdateGrid();
-            }
-            catch (SqlException ex)
-            {
-
-            }
-            catch (Exception ex)
-            {
-
             }
         }
-        private void GetEmployee() //try catch
+        private void GetEmployee()
         {
-            Employee emp = new Employee();
-            using (DBUtil util = new DBUtil())
+            Employee emp = stuffController.GetEmployee(rowID);
+            if (emp != null) FillEdits(emp);
+            else
             {
-                string sqlRequest = getEmployeeData + rowID;
-                DbDataReader reader = util.GetDbDataReader(sqlRequest);
-                if (reader == null) { statusLabel.Text = "Ошибка!"; return; }
-                    reader.Read();
-                    emp.ID              = (Decimal)reader["ID"];
-                    emp.FirstName       = (string)reader["FirstName"];
-                    emp.SurName         = (string)reader["SurName"];
-                    emp.Patronymic      = (string)(!DBNull.Value.Equals(reader["Patronymic"]) ? reader["Patronymic"] : ""); //NULL
-                    emp.DateOfBirth     = (string)reader["DateOfBirth"];
-                    emp.DocSeries       = (string)(!Convert.IsDBNull(reader["DocSeries"]) ? reader["DocSeries"] : ""); //NULL
-                    emp.DocNumber       = (string)(!Convert.IsDBNull(reader["DocNumber"]) ? reader["DocNumber"] : ""); //NULL
-                    emp.Position        = (string)reader["Position"];
-                    emp.DepartmentID    = (Guid)reader["DepartmentID"];
+                statusLabel.Text = "Ошибка: сотрудник не найден!";
             }
-            FillEdits(emp);
         }
         private void FillEdits(Employee emp)
         {
@@ -330,7 +293,7 @@ namespace DBConnect.view
             docseriesBox.Text = "";
             docnumberBox.Text = "";
             positionBox.Text = "";
-            statusLabel.Text = "";
+            //statusLabel.Text = "";
         }
         private bool ValidateEdits()
         {
@@ -341,7 +304,7 @@ namespace DBConnect.view
                 return false;
             } else if (firstnameBox.Text.ToString().Trim().Length > 50)
             {
-                statusLabel.Text = "Имя слишком длинное";
+                statusLabel.Text = "Имя слишком длинное (макс. 50 символов)";
                 return false;
             }
             if (string.IsNullOrEmpty(surnameBox.Text.ToString().Trim()))
@@ -350,25 +313,25 @@ namespace DBConnect.view
                 return false;
             } else if (surnameBox.Text.ToString().Trim().Length > 50)
             {
-                statusLabel.Text = "Фамилия слишком длинная";
+                statusLabel.Text = "Фамилия слишком длинная (макс. 50 символов)";
                 return false;
             }
             if (patronymicBox.Text.ToString().Trim().Length > 50)
             {
-                statusLabel.Text = "Отчество слишком длинное";
+                statusLabel.Text = "Отчество слишком длинное (макс. 50 символов)";
                 return false;
             }
             if(docseriesBox.Text.ToString().Trim().Length > 4)
             {
-                statusLabel.Text = "Серия документа слишком длинная";
+                statusLabel.Text = "Серия документа слишком длинная (макс. 4 символа)";
                 return false;
             }
             if (docnumberBox.Text.ToString().Trim().Length > 6)
             {
-                statusLabel.Text = "Номер документа слишком длинный";
+                statusLabel.Text = "Номер документа слишком длинный (макс. 6 символов)";
                 return false;
             }
-            try
+            try //проверить
             {
                 Convert.ToDateTime(dobBox.Text);
             }
@@ -377,9 +340,24 @@ namespace DBConnect.view
                 statusLabel.Text = "Проверьте дату! ";
                 return false;
             }
-            if (string.IsNullOrEmpty(positionBox.Text.ToString().Trim())) { statusLabel.Text = "Проверьте должность!"; return false; }
+            if (string.IsNullOrEmpty(positionBox.Text.ToString().Trim()))
+            {
+                statusLabel.Text = "Проверьте должность!";
+                return false;
+            }
+            if (positionBox.Text.ToString().Trim().Length > 50)
+            {
+                statusLabel.Text = "Название должности слишком длинное (макс. 50 символов)";
+                return false;
+            }
             Department dept = (Department)deptComboBox.SelectedItem;
-            if (!departments.Contains(dept)) { statusLabel.Text = "Что-то не то с отделом"; return false; }
+            //var list = departments.Select(p => p.ID).ToList<Guid>();
+            //if (!list.Contains(dept.ID))
+            if (!departments.Select(p=>p.ID).Contains(dept.ID))
+            {
+                statusLabel.Text = "Что-то не то с отделом";
+                return false;
+            }
             return true;
         }
     }

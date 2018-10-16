@@ -1,0 +1,14 @@
+C:\Users\teeja\Dropbox\prog\c#\kosta\DBConnect\DBConnect\bin\Release\DBConnect.exe
+C:\Users\teeja\Dropbox\prog\c#\kosta\DBConnect\DBConnect\bin\Release\DBConnect.pdb
+C:\Users\teeja\Dropbox\prog\c#\kosta\DBConnect\DBConnect\obj\Release\DBConnect.MainForm.resources
+C:\Users\teeja\Dropbox\prog\c#\kosta\DBConnect\DBConnect\obj\Release\DBConnect.Properties.Resources.resources
+C:\Users\teeja\Dropbox\prog\c#\kosta\DBConnect\DBConnect\obj\Release\DBConnect.view.DepartmentsView.resources
+C:\Users\teeja\Dropbox\prog\c#\kosta\DBConnect\DBConnect\obj\Release\DBConnect.Settings.resources
+C:\Users\teeja\Dropbox\prog\c#\kosta\DBConnect\DBConnect\obj\Release\DBConnect.view.StructureView.resources
+C:\Users\teeja\Dropbox\prog\c#\kosta\DBConnect\DBConnect\obj\Release\DBConnect.view.StuffView.resources
+C:\Users\teeja\Dropbox\prog\c#\kosta\DBConnect\DBConnect\obj\Release\DBConnect.csproj.GenerateResource.cache
+C:\Users\teeja\Dropbox\prog\c#\kosta\DBConnect\DBConnect\obj\Release\DBConnect.csproj.CoreCompileInputs.cache
+C:\Users\teeja\Dropbox\prog\c#\kosta\DBConnect\DBConnect\obj\Release\DBConnect.exe
+C:\Users\teeja\Dropbox\prog\c#\kosta\DBConnect\DBConnect\obj\Release\DBConnect.pdb
+C:\Users\teeja\Dropbox\prog\c#\kosta\DBConnect\DBConnect\obj\Release\DBConnect.csprojResolveAssemblyReference.cache
+C:\Users\teeja\Dropbox\prog\c#\kosta\DBConnect\DBConnect\bin\Release\DBConnect.exe.config

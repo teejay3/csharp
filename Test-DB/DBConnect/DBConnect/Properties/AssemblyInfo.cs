@@ -6,12 +6,12 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("DBConnect")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Тестовое приложение для работы с HR схемой")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Мельников Ю.С.")]
 [assembly: AssemblyProduct("DBConnect")]
-[assembly: AssemblyCopyright("Copyright ©  2018")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCopyright("BSD v3 ©  2018")]
+[assembly: AssemblyTrademark("-")]
 [assembly: AssemblyCulture("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible

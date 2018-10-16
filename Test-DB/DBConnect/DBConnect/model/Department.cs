@@ -5,8 +5,29 @@ using System.Text;
 
 namespace DBConnect.model
 {
-    class Department
+    public class Department
     {
+        public static string updateDepartmentWithParent = "update [dbo].[Department] set " +
+                                                        "Name=@name" +
+                                                        ", Code=@code" +
+                                                        ", ParentDepartmentID=@parentid" +
+                                                        " where ID=@id";
+        public static string updateDepartment = "update [dbo].[Department] set " +
+                                    "Name=@name, Code=@code where ID=@id";
+        public static string deleteDepartment = "delete from [dbo].[Department] where [ID] =@id";
+        public static string insertDepartment = "INSERT [dbo].[Department] VALUES (@id, @name, @code, @parentid)";
+        public static string getDepartments = "select Name, Code, ID, ParentDepartmentID from department";
+        public static string getDepartmentsWithNames = "SELECT " +
+            "a.[ID] as ID, " +
+            "a.[Name] as Name , " +
+            "a.[Code] as Code, " +
+            "a.[ParentDepartmentID] as ParentDepartmentID , " +
+            "concat(b.[Name], b.[Code]) as ParentName " +
+            "FROM [dbo].[Department] a left join[dbo].[Department] b on a.ParentDepartmentID = b.ID";
+        public Department()
+        {
+
+        }
         public Department(  Guid ID,
                             string Code, 
                             string Name)
@@ -20,7 +41,7 @@ namespace DBConnect.model
         public Department(  Guid ID,
                             string Name, 
                             string Code,      
-                            Guid ParentDepartmentID)
+                            Guid? ParentDepartmentID)
         {
             this.ID = ID;
             this.Name = Name;
@@ -30,7 +51,7 @@ namespace DBConnect.model
         }
 
         public Guid ID { get; set; }
-        public Guid ParentDepartmentID { get; set; }
+        public Guid? ParentDepartmentID { get; set; }
         public string Code { get; set; }
         public string Name { get; set; }
         public string UniqueDept { get; set; }

@@ -37,60 +37,50 @@
             // 
             // settingsButton
             // 
-            this.settingsButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.settingsButton.Location = new System.Drawing.Point(57, 249);
+            this.settingsButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.settingsButton.Location = new System.Drawing.Point(70, 308);
             this.settingsButton.Name = "settingsButton";
-            this.settingsButton.Size = new System.Drawing.Size(141, 23);
+            this.settingsButton.Size = new System.Drawing.Size(140, 25);
             this.settingsButton.TabIndex = 0;
             this.settingsButton.Text = "Настройки соединения";
             this.settingsButton.UseVisualStyleBackColor = true;
             // 
             // testButton
             // 
-            this.testButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.testButton.Location = new System.Drawing.Point(57, 290);
+            this.testButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.testButton.Location = new System.Drawing.Point(70, 375);
             this.testButton.Name = "testButton";
-            this.testButton.Size = new System.Drawing.Size(141, 23);
+            this.testButton.Size = new System.Drawing.Size(140, 41);
             this.testButton.TabIndex = 1;
-            this.testButton.Text = "Тест соединения";
+            this.testButton.Text = "Соединение/Тест соединения";
             this.testButton.UseVisualStyleBackColor = true;
             // 
             // departmentButton
             // 
-            this.departmentButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.departmentButton.Location = new System.Drawing.Point(68, 95);
+            this.departmentButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.departmentButton.Location = new System.Drawing.Point(70, 95);
             this.departmentButton.Name = "departmentButton";
-            this.departmentButton.Size = new System.Drawing.Size(130, 23);
+            this.departmentButton.Size = new System.Drawing.Size(140, 25);
             this.departmentButton.TabIndex = 4;
             this.departmentButton.Text = "Отделы";
             this.departmentButton.UseVisualStyleBackColor = true;
             // 
             // structureButton
             // 
-            this.structureButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.structureButton.Location = new System.Drawing.Point(68, 155);
+            this.structureButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.structureButton.Location = new System.Drawing.Point(70, 155);
             this.structureButton.Name = "structureButton";
-            this.structureButton.Size = new System.Drawing.Size(130, 23);
+            this.structureButton.Size = new System.Drawing.Size(140, 25);
             this.structureButton.TabIndex = 3;
             this.structureButton.Text = "Структура компании";
             this.structureButton.UseVisualStyleBackColor = true;
             // 
             // stuffEditButton
             // 
-            this.stuffEditButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.stuffEditButton.Location = new System.Drawing.Point(68, 28);
+            this.stuffEditButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.stuffEditButton.Location = new System.Drawing.Point(70, 28);
             this.stuffEditButton.Name = "stuffEditButton";
-            this.stuffEditButton.Size = new System.Drawing.Size(130, 23);
+            this.stuffEditButton.Size = new System.Drawing.Size(140, 25);
             this.stuffEditButton.TabIndex = 2;
             this.stuffEditButton.Text = "Сотрудники";
             this.stuffEditButton.UseVisualStyleBackColor = true;

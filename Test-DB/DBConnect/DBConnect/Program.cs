@@ -16,10 +16,6 @@ namespace DBConnect
             Application.SetCompatibleTextRenderingDefault(false);
             Form mainForm = new MainForm();
             Application.Run(mainForm);
-
-            //Application.ThreadException += new ThreadExceptionEventHandler(ErrorHandlerForm.Form1_UIThreadException);
-            //Application.SetUnhandledExceptionMode(UnhandledExceptionMode.CatchException);
-            //AppDomain.CurrentDomain.UnhandledException += new UnhandledExceptionEventHandler(CurrentDomain_UnhandledException);
         }
     }
 }

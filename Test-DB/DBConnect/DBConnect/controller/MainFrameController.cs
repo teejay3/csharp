@@ -1,4 +1,5 @@
 ﻿using DBConnect.view;
+using System;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -6,37 +7,31 @@ namespace DBConnect.controller
 {
     class MainFrameController
     {
-        private Settings settings;
-        private StructureView structure;
-        private StuffView stuff;
-        private DepartmentsView dept;
-
+        private StuffView stuffView;
+        private DepartmentsView departmentsView;
         public MainFrameController()
         {
             Init();
         }
         private void ShowFrame(Form form)
         {
-            if (!form.IsDisposed)
-            {
-                form.Show();
-            }
-            else
+            try
             {
                 System.Type type = form.GetType();
                 form = (Form)System.Activator.CreateInstance(type);
                 form.Show();
             }
-            
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
         private void Init()
         {
-            settings = new Settings();
-            structure = new StructureView();
-            stuff = new StuffView();
-            dept = new DepartmentsView();
+            departmentsView = new DepartmentsView();
+            stuffView = new StuffView();
         }
-        public void GetSettings()
+        public void GetSettings(Settings settings)
         {
             ShowFrame(settings);
         }
@@ -44,20 +39,20 @@ namespace DBConnect.controller
         {
             using (DBUtil util = new DBUtil())
             {
-                util.TestConnection();
+                new Thread(()=>util.TestConnection()).Start();
             }
         }
-        public void GetStructure()
+        public void GetStructure(StructureView structure)
         {
             ShowFrame(structure);
         }
         public void GetStuff()
         {
-            ShowFrame(stuff);
+                ShowFrame(stuffView);
         }
         public void GetDepartments()
         {
-            ShowFrame(dept);
+            ShowFrame(departmentsView);
         }
     }
 }
