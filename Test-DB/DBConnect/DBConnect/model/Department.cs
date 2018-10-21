@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
 
 namespace DBConnect.model
 {
-    public class Department
+    public class Department : ICloneable
     {
         public static string updateDepartmentWithParent = "update [dbo].[Department] set " +
                                                         "Name=@name" +
@@ -29,8 +30,8 @@ namespace DBConnect.model
 
         }
         public Department(  Guid ID,
-                            string Code, 
-                            string Name)
+                            string Name, 
+                            string Code)
         {
             this.ID = ID;
             this.Code = Code;
@@ -55,5 +56,16 @@ namespace DBConnect.model
         public string Code { get; set; }
         public string Name { get; set; }
         public string UniqueDept { get; set; }
+        public object Clone()
+        {
+            Object other = new Department(this.ID, this.Name, this.Code, this.ParentDepartmentID);
+            return other;
+        }
+        public static implicit operator TreeNode(Department dept)
+        {
+            TreeNode node = new TreeNode(dept.UniqueDept);
+            node.Name = dept.ID.ToString();
+            return node;
+        }
     }
 }

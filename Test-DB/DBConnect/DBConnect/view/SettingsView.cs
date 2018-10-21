@@ -51,9 +51,22 @@ namespace DBConnect
             config.AppSettings.Settings["Password"].Value = textPasswd.Text.Trim();
             config.AppSettings.Settings["Data source"].Value = textSrvName.Text.Trim();
 
-            config.Save(ConfigurationSaveMode.Full, true);  //try catch
+            try
+            {
+                Console.WriteLine(AppDomain.CurrentDomain.SetupInformation.ConfigurationFile);
+                config.Save(ConfigurationSaveMode.Modified, true);
+                Hide();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка кофигурационного файла: " + ex.Message + ' ' + ex.TargetSite,
+                                      "Ошибка",
+                                      MessageBoxButtons.OK,
+                                      MessageBoxIcon.Error);
+                
+            }
             ConfigurationManager.RefreshSection("appSettings");
-            Hide();
+
         }
     }
 }

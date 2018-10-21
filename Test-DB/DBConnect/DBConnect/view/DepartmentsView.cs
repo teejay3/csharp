@@ -32,13 +32,14 @@ namespace DBConnect.view
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
             }
+            
         }
         private void Init()
         {
-            this.deptController = new DepartmentController();
+            //this.deptController = new DepartmentController();
             dept = new List<Department>();
             DisableButtons();
-
+            //UpdateDepartments();
             this.Shown += (o, e) => { UpdateDepartments(); };
             refreshButton.Click += (o, e) => {  UpdateDepartments(); ClearEdits(); DisableButtons(); };
             updateButton.Click += (o, e) => { EditDepartment(); ClearEdits(); };
@@ -80,6 +81,10 @@ namespace DBConnect.view
                     
                 }
             };
+        }
+        public void AttachController(DepartmentController myController)
+        {
+            this.deptController = myController;
         }
         private void DisableButtons()
         {
@@ -170,6 +175,7 @@ namespace DBConnect.view
         }
         private void EditDepartment()
         {
+            if (CheckForLoop()) { statusLabel.Text = "Проверьте родительский отдел, возможно зацикливание."; return; }
             List<SqlParameter> list = new List<SqlParameter>();
             if (ValidateEdits())
             {
@@ -208,8 +214,8 @@ namespace DBConnect.view
                     " обновлён";
                 }
                 catch { }
-                UpdateDepartments();
-                ClearEdits();
+                //UpdateDepartments();
+                //ClearEdits();
             }
         }
         private void DeleteDepartment()
@@ -237,7 +243,7 @@ namespace DBConnect.view
             {
                 statusLabel.Text = "Нельзя удалить " + dep.UniqueDept;
             }
-            FillGrid();
+            //FillGrid();
         }
         private void AddDepartment()
         {
@@ -270,13 +276,40 @@ namespace DBConnect.view
                 {
                     statusLabel.Text = "Новывй отдел добавлен";
                     ClearEdits();
-                    FillGrid();
+                    //FillGrid();
                 }
                 else
                 {
                     statusLabel.Text = "Отдел добавлен не добавлен";
                 }
             }
+        }
+        public override void DeptUpdate()
+        {
+            UpdateDepartments();
+            //ClearEdits();
+            FillGrid();
+            DisableButtons();
+            FillComboBox();
+        }
+        private bool CheckForLoop()
+        {
+            Department selectedDept = (Department)deptBox.SelectedItem;
+            if (selectedDept.ID == currentID) return true;
+
+            Department tmp3 = selectedDept.Clone() as Department;
+            while (tmp3.ParentDepartmentID != null)
+            {
+                var tmp2 = dept.Where(p => p.ID == tmp3.ParentDepartmentID).First();
+                if (tmp2.ID == currentID) return true;
+                tmp3 = tmp2.Clone() as Department;
+            }
+            return false;
+        }
+        private void DepartmentsView_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = true;
+            this.Hide();
         }
     }
 }

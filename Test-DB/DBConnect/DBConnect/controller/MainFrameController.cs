@@ -9,6 +9,8 @@ namespace DBConnect.controller
     {
         private StuffView stuffView;
         private DepartmentsView departmentsView;
+        private MyController deptController;
+        //private MyController stuffController;
         public MainFrameController()
         {
             Init();
@@ -17,8 +19,6 @@ namespace DBConnect.controller
         {
             try
             {
-                System.Type type = form.GetType();
-                form = (Form)System.Activator.CreateInstance(type);
                 form.Show();
             }
             catch (Exception ex)
@@ -30,6 +30,11 @@ namespace DBConnect.controller
         {
             departmentsView = new DepartmentsView();
             stuffView = new StuffView();
+
+            deptController = new DepartmentController(departmentsView);
+            deptController.AttachView(departmentsView);
+            deptController.AttachView(stuffView);
+            //stuffController = new StuffController();
         }
         public void GetSettings(Settings settings)
         {
@@ -42,13 +47,9 @@ namespace DBConnect.controller
                 new Thread(()=>util.TestConnection()).Start();
             }
         }
-        public void GetStructure(StructureView structure)
-        {
-            ShowFrame(structure);
-        }
         public void GetStuff()
         {
-                ShowFrame(stuffView);
+            ShowFrame(stuffView);
         }
         public void GetDepartments()
         {

@@ -199,6 +199,7 @@
             this.MinimumSize = new System.Drawing.Size(650, 500);
             this.Name = "DepartmentsView";
             this.Text = "DepartmentsView";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DepartmentsView_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.departmentsViewBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.departmentsViewBindingSource1)).EndInit();

@@ -31,7 +31,6 @@
             this.settingsButton = new System.Windows.Forms.Button();
             this.testButton = new System.Windows.Forms.Button();
             this.departmentButton = new System.Windows.Forms.Button();
-            this.structureButton = new System.Windows.Forms.Button();
             this.stuffEditButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -65,16 +64,6 @@
             this.departmentButton.Text = "Отделы";
             this.departmentButton.UseVisualStyleBackColor = true;
             // 
-            // structureButton
-            // 
-            this.structureButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.structureButton.Location = new System.Drawing.Point(70, 155);
-            this.structureButton.Name = "structureButton";
-            this.structureButton.Size = new System.Drawing.Size(140, 25);
-            this.structureButton.TabIndex = 3;
-            this.structureButton.Text = "Структура компании";
-            this.structureButton.UseVisualStyleBackColor = true;
-            // 
             // stuffEditButton
             // 
             this.stuffEditButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -91,7 +80,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 461);
             this.Controls.Add(this.departmentButton);
-            this.Controls.Add(this.structureButton);
             this.Controls.Add(this.stuffEditButton);
             this.Controls.Add(this.testButton);
             this.Controls.Add(this.settingsButton);
@@ -107,7 +95,6 @@
         private System.Windows.Forms.Button settingsButton;
         private System.Windows.Forms.Button testButton;
         private System.Windows.Forms.Button departmentButton;
-        private System.Windows.Forms.Button structureButton;
         private System.Windows.Forms.Button stuffEditButton;
     }
 }

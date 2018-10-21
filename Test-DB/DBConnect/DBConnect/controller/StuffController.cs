@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace DBConnect.controller
 {
-    class StuffController : MyController
+    class StuffController
     {
         public StuffController()
         {
@@ -131,10 +131,10 @@ namespace DBConnect.controller
                 while (reader.Read())
                 {
                     result.Add(new Department((System.Guid)reader["ID"],
-                                                    //(System.Guid)reader["ParentDepartmentID"],
+                                                    (string)reader["Name"],
                                                     (string)reader["Code"],
-                                                    (string)reader["Name"])
-                                    );
+                                                    (System.Guid?) (!DBNull.Value.Equals(reader["ParentDepartmentID"]) ? reader["ParentDepartmentID"] : null)
+                                    ));
                 }
                 reader.Close();
                 util.CloseConnection();

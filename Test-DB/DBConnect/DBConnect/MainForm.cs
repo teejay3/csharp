@@ -17,9 +17,8 @@ namespace DBConnect
             this.Text = "Kosta DB";
             stuffEditButton.Enabled = false;
             departmentButton.Enabled = false;
-            structureButton.Enabled = false;
 
-            baseController = new MainFrameController();
+            this.Shown += (o,e) => baseController = new MainFrameController();
             settingsButton.Click    += (o, e) => { baseController.GetSettings(new Settings());};
             testButton.Click        += (o, e) => 
             {
@@ -29,7 +28,6 @@ namespace DBConnect
                     {
                         stuffEditButton.Enabled = true;
                         departmentButton.Enabled = true;
-                        structureButton.Enabled = true;
                         MessageBox.Show("Соединение установлено.",
                                 "Проверка соединения",
                                 MessageBoxButtons.OK,
@@ -39,7 +37,6 @@ namespace DBConnect
                     {
                         stuffEditButton.Enabled = false;
                         departmentButton.Enabled = false;
-                        structureButton.Enabled = false;
                         MessageBox.Show("Ошибка соединения.",
                                 "Проверка соединения",
                                 MessageBoxButtons.OK,
@@ -47,7 +44,6 @@ namespace DBConnect
                     }
                 }
             };
-            structureButton.Click   += (o, e) => { baseController.GetStructure(new StructureView()); };
             stuffEditButton.Click   += (o, e) => { baseController.GetStuff(); };
             departmentButton.Click  += (o, e) => { baseController.GetDepartments(); };
         }

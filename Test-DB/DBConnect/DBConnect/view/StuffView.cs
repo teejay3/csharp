@@ -12,9 +12,10 @@ namespace DBConnect.view
     partial class StuffView : MyView
     {
         private List<Department> departments;
-        private List<Employee> emps;
         private StuffController stuffController;
         private int rowID;
+        private Guid currentID;
+        private bool showAll = false;
         public StuffView()
         {
             InitializeComponent();
@@ -34,23 +35,24 @@ namespace DBConnect.view
         {
             this.stuffController = new StuffController();
             departments = new List<Department>();
-            emps = new List<Employee>();
-            deleteButton.Enabled    = false;
-            saveButton.Enabled      = false;
-            addButton.Enabled       = false;
-            deptComboBox.Enabled    = false;
+            DisableButtons();
 
             dataGridView1.ReadOnly = true;
 
-            this.FormClosed += (o, e) => { this.Dispose(); };
-            comboBox1.SelectedValueChanged += (o, e) => {
-                UpdateGrid();
-                deleteButton.Enabled    = false;
-                saveButton.Enabled      = false;
-                addButton.Enabled       = false;
-                deptComboBox.Enabled    = false;
-            };
-            showAllButton.Click += (o, e) => { FillGrid(Employee.getEmployees); };
+            //GetDepartments();
+            if (departments == null)
+            {
+                MessageBox.Show("Критическая ошибка: невозможно загрузить список подразделений или он пуст",
+                                        "Ошибка",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Error);
+                this.Hide();
+            }
+            //FillGrid(Employee.getEmployees);
+
+            this.Shown += (o, e) => {  GetDepartments(); FillGrid(Employee.getEmployees); BuildTree(); };
+            //this.FormClosed += (o, e) => { this.Dispose(); };
+            showAllButton.Click += (o, e) => { FillGrid(Employee.getEmployees); showAll = true; };
             dataGridView1.CellClick += (o, e) => 
             {
                 string idStr = "0";
@@ -77,7 +79,7 @@ namespace DBConnect.view
                     addButton.Enabled = true;
                     deptComboBox.Enabled = true;
                     ClearEdits();
-                    deptComboBox.SelectedValue = comboBox1.SelectedValue;
+                    deptComboBox.SelectedValue = currentID;
                 }
             };
             refreshButton.Click += (o, e) => 
@@ -85,23 +87,38 @@ namespace DBConnect.view
                 GetDepartments();
                 UpdateGrid();
                 ClearEdits();
-                deleteButton.Enabled = false;
-                saveButton.Enabled = false;
-                addButton.Enabled = false;
-                deptComboBox.Enabled = false;
+                BuildTree();
+                DisableButtons();
+                showAll = false;
             };
             addButton.Click += (o, e) => { InsertItem(); };
             saveButton.Click += (o, e) => { UpdateItem(); };
             deleteButton.Click += (o, e) => { DeleteItem(); };
-            GetDepartments();
-            if (departments == null)
+            buttonHide.Click += (o, e) => { if (splitContainer1.Panel2Collapsed) buttonHide.Text = ">"; else buttonHide.Text = "<"; splitContainer1.Panel2Collapsed = !splitContainer1.Panel2Collapsed; };
+            treeView1.NodeMouseClick += (o, e) => 
             {
-                MessageBox.Show("Критическая ошибка: невозможно загрузить список подразделений или он пуст",
-                                        "Ошибка",
-                                        MessageBoxButtons.OK,
-                                        MessageBoxIcon.Error);
-                this.Close();
-            }
+                showAll = false;
+                try
+                {
+                    //Guid.TryParse(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString(), out currentID);   //c NET4.5
+                    currentID = new Guid(e.Node.Name);
+                }
+                catch (Exception ex)
+                {
+                    statusLabel.Text = "Ошибка, такого отдела нет";
+                }
+                string name = e.Node.Name + " " + e.Node.Text;
+                Console.WriteLine(name);
+                UpdateGrid();
+                DisableButtons();
+            };
+        }
+        private void DisableButtons()
+        {
+            deleteButton.Enabled = false;
+            saveButton.Enabled = false;
+            addButton.Enabled = false;
+            deptComboBox.Enabled = false;
         }
         private void GetDepartments()
         {
@@ -127,12 +144,6 @@ namespace DBConnect.view
         }
         private void UpdateComboBox()
         {
-            BindingSource bs        = new BindingSource();
-            bs.DataSource           = departments;
-            comboBox1.DataSource    = bs;
-            comboBox1.DisplayMember = "UniqueDept";
-            comboBox1.ValueMember   = "ID";
-
             BindingSource bs2           = new BindingSource();
             bs2.DataSource              = departments;
             deptComboBox.DataSource     = bs2;
@@ -153,8 +164,7 @@ namespace DBConnect.view
         }
         private void UpdateGrid()
         {
-            Department dept = (Department)comboBox1.SelectedItem;
-            string sql = Employee.getEmployees + " where departmentid = '" + dept.ID + "'";
+            string sql = Employee.getEmployees + " where departmentid = '" + currentID + "'";
             FillGrid(sql);
         }
         private void UpdateItem()
@@ -197,6 +207,8 @@ namespace DBConnect.view
                 if (stuffController.RequestEmployee(Employee.updateEmployee, list))
                 {
                     statusLabel.Text = "Запись " + idBox.Text + " обновлена";
+                    if (showAll) FillGrid(Employee.getEmployees);
+                    else UpdateGrid();
                 }
                 else
                 {
@@ -243,6 +255,13 @@ namespace DBConnect.view
                 if (stuffController.RequestEmployee(Employee.insertEmployee, list))
                 {
                     statusLabel.Text = "Новая запись добавлена";
+                    currentID = dept.ID;
+
+                    TreeNode[] list1 = treeView1.Nodes.Find(dept.ID.ToString(), true);
+                    if (list1.Length != 0)
+                        treeView1.SelectedNode = list1[0];
+                    if (showAll) FillGrid(Employee.getEmployees);
+                    else UpdateGrid();
                 }
                 else
                 {
@@ -259,13 +278,19 @@ namespace DBConnect.view
             if (stuffController.RequestEmployee(Employee.deleteItem, list))
             {
                 statusLabel.Text = "Сотрудник " + rowID + " удалён";
+                
                 ClearEdits();
+                if (showAll) FillGrid(Employee.getEmployees);
+                else UpdateGrid();
             }
         }
         private void GetEmployee()
         {
             Employee emp = stuffController.GetEmployee(rowID);
-            if (emp != null) FillEdits(emp);
+            if (emp != null)
+            {
+                FillEdits(emp);
+            }
             else
             {
                 statusLabel.Text = "Ошибка: сотрудник не найден!";
@@ -273,27 +298,27 @@ namespace DBConnect.view
         }
         private void FillEdits(Employee emp)
         {
-            idBox.Text = emp.ID.ToString();
-            firstnameBox.Text = emp.FirstName;
-            surnameBox.Text = emp.SurName;
-            patronymicBox.Text = emp.Patronymic;
-            dobBox.Text = emp.DateOfBirth.ToString();
-            docseriesBox.Text = emp.DocSeries;
-            docnumberBox.Text = emp.DocNumber;
-            positionBox.Text = emp.Position;
-            deptComboBox.SelectedValue = emp.DepartmentID;
+            idBox.Text                  = emp.ID.ToString();
+            firstnameBox.Text           = emp.FirstName;
+            surnameBox.Text             = emp.SurName;
+            patronymicBox.Text          = emp.Patronymic;
+            dobBox.Text                 = emp.DateOfBirth.ToString();
+            docseriesBox.Text           = emp.DocSeries;
+            docnumberBox.Text           = emp.DocNumber;
+            positionBox.Text            = emp.Position;
+            deptComboBox.SelectedValue  = emp.DepartmentID;
         }
         private void ClearEdits()
         {
-            idBox.Text = "";
-            firstnameBox.Text = "";
-            surnameBox.Text = "";
-            patronymicBox.Text = "";
-            dobBox.Text = "";
-            docseriesBox.Text = "";
-            docnumberBox.Text = "";
-            positionBox.Text = "";
-            //statusLabel.Text = "";
+            idBox.Text          = "";
+            firstnameBox.Text   = "";
+            surnameBox.Text     = "";
+            patronymicBox.Text  = "";
+            dobBox.Text         = "";
+            docseriesBox.Text   = "";
+            docnumberBox.Text   = "";
+            positionBox.Text    = "";
+            //statusLabel.Text  = "";
         }
         private bool ValidateEdits()
         {
@@ -359,6 +384,101 @@ namespace DBConnect.view
                 return false;
             }
             return true;
+        }
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            switch (keyData)
+            {
+                case Keys.Up:
+                    {
+                        Console.WriteLine("up");
+                        return true;
+                    }
+                case Keys.Down:
+                    {
+                        Console.WriteLine("down");
+                        return true;
+                    }
+            }
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
+        private void BuildTree()
+        {
+            treeView1.Nodes.Clear();
+
+            List<Department> tmpArr = new List<Department>();
+            for (int i = 0; i < departments.Count; i++)
+            {
+                //                tmpArr.Add(new Department(departments[i].ID, 
+                //                    departments[i].Name, 
+                //                    departments[i].Code, 
+                //                    departments[i].ParentDepartmentID));
+                tmpArr.Add(departments[i].Clone() as Department);
+            }
+            
+            Department rootDept = new Department();
+            
+            for (int i = 0; i < tmpArr.Count; i++)
+            {
+                if (tmpArr[i].ParentDepartmentID == null)
+                {
+                    rootDept = tmpArr[i];
+                    tmpArr.RemoveAt(i);
+                    break;
+                }
+            }
+
+            treeView1.Nodes.Add((TreeNode)rootDept);
+
+            Department tmp = new Department();
+            List<Department> list = new List<Department>();
+            Queue<Department> queue = new Queue<Department>();
+
+            do
+            {
+                for (int j = 0; j < tmpArr.Count; j++)
+                {
+                    if (tmpArr[j].ParentDepartmentID == rootDept.ID)
+                    {
+                        list.Add(tmpArr[j]);
+                        queue.Enqueue(tmpArr[j]);
+                        //tmpArr.RemoveAt(j);
+                    }
+                }
+                AddNode(rootDept, list);
+                if (queue.Count == 0) break;
+                rootDept = queue.Dequeue();
+                list.Clear();
+            } while (true);
+            treeView1.ExpandAll();
+        }
+        private void AddNode(Department dept, List<Department> list)
+        {
+            TreeNode[] treeArr = new TreeNode[list.Count];
+            for (int i = 0; i < treeArr.Length; i++)
+            {
+                //                treeArr[i] = new TreeNode(list[i].UniqueDept);
+                //                treeArr[i].Name = list[i].ID.ToString();
+                treeArr[i] = (TreeNode)list[i];
+            }
+            foreach (var item in treeArr)
+            {
+                TreeNode[] list1 = treeView1.Nodes.Find(dept.ID.ToString(), true);
+                if(list1.Length != 0)
+                    list1[0].Nodes.Add(item);
+            }
+            
+        }
+        private void StuffView_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = true;
+            this.Hide();
+        }
+        public override void DeptUpdate()
+        {
+            GetDepartments();
+            BuildTree();
+            FillGrid(Employee.getEmployees);
         }
     }
 }

@@ -1,19 +1,53 @@
 ﻿using DBConnect.view;
+using System;
+using System.Collections.Generic;
 
 namespace DBConnect.controller
 {
-    abstract class MyController
+    public abstract class MyController
     {
-        private MyView myView;
-        private DBUtil util;
+        private List<MyView> views;
+        //MyView Views { get; set; }
+        //event EvenHandler<MyviewEventArgs> ProjectUpdated;
+        //DBUtil Util { get; set; }
 
         public MyController()
         {
+            views = new List<MyView>();
         }
-        public MyController(MyView myView, DBUtil util)
+        public virtual void UpdatedDept()
         {
-            this.myView = myView;
-            this.util = util;
+            Console.WriteLine("Send update event");
+            if (views.Count == 0) return;
+            foreach (var item in views)
+            {
+                Console.WriteLine(item.Name);
+                if (item != null)
+                    item.DeptUpdate();
+            }
+        }
+        public virtual void UpdatedEmp()
+        {
+            if (views.Count == 0) return;
+            foreach (var item in views)
+            {
+                if (item != null)
+                    item.EmpUpdate();
+            }
+        }
+        public void AttachView(MyView view)
+        {
+            views.Add(view);
+        }
+    }
+
+    public class MyviewEventArgs : EventArgs
+    {
+        public MyView MyView { get; set; }
+
+        public MyviewEventArgs(MyView myView)
+        {
+            this.MyView = myView;
         }
     }
 }

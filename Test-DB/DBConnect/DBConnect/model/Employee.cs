@@ -14,6 +14,13 @@ namespace DBConnect.model
             + " Position as 'Должность', " +
             "cast(datediff(mm, dateofbirth, getdate()) / 12 as int) as 'Возраст, лет'"
             + " from Empoyee";
+        public static string getEmployeesFromDept = "select ID as 'ИД', " +
+            "FirstName as 'Имя', " +
+            "SurName as 'Фамилия', " +
+            "Patronymic as 'Отчество',"
+            + " Position as 'Должность', " +
+            "cast(datediff(mm, dateofbirth, getdate()) / 12 as int) as 'Возраст, лет'"
+            + " from Empoyee where departmentid = @deptid";
         public static string deleteItem = "delete from empoyee where id = @id";
         public static string getEmployeeData = "select ID, FirstName, SurName, Patronymic, FORMAT(DateOfBirth,'yyyy-MM-dd') as DateOfBirth, DocSeries, DocNumber, Position, DepartmentID from empoyee where id=";
         public static string insertEmployee = "insert into empoyee values ( " +

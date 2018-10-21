@@ -15,7 +15,7 @@ namespace DBConnect
 // User ID=sa;
 // Password =12345
 //
-    class DBUtil : IDisposable
+    public class DBUtil : IDisposable
     {
         private SqlConnection conn;
         private DbDataReader dataReader;
@@ -30,7 +30,6 @@ namespace DBConnect
         }
         public void GetState()
         {
-
         }
         public bool IsServerConnected()
         {

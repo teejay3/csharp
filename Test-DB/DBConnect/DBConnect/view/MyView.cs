@@ -3,8 +3,12 @@ using System.Windows.Forms;
 
 namespace DBConnect.view
 {
-    public abstract partial class MyView : Form
+    public partial class MyView :Form
     {
+        public MyView()
+        {
+
+        }
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
             switch (keyData)
@@ -21,6 +25,13 @@ namespace DBConnect.view
                     }
             }
             return base.ProcessCmdKey(ref msg, keyData);
+        }
+
+        public virtual void DeptUpdate()
+        {
+        }
+        public virtual void EmpUpdate()
+        {
         }
     }
 }

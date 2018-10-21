@@ -1,4 +1,5 @@
 ﻿using DBConnect.model;
+using DBConnect.view;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -8,11 +9,16 @@ using System.Windows.Forms;
 
 namespace DBConnect.controller
 {
-    class DepartmentController : MyController
+    public class DepartmentController : MyController
     {
         public DepartmentController()
         {
             Init();
+        }
+        public DepartmentController(DepartmentsView view)
+        {
+            Init();
+            view.AttachController(this);
         }
         private void Init()
         {
@@ -42,6 +48,7 @@ namespace DBConnect.controller
             {
                 util.CloseConnection();
             }
+//            UpdatedDept();
             return result;
         }
         public DataSet GetGridSet()
@@ -81,6 +88,7 @@ namespace DBConnect.controller
                 util.OpenConnection();
                 cmd.ExecuteNonQuery();
                 util.CloseConnection();
+                UpdatedDept();
                 return true;
             }
             catch (SqlException ex)
@@ -115,6 +123,7 @@ namespace DBConnect.controller
                 util.OpenConnection();
                 cmd.ExecuteNonQuery();
                 util.CloseConnection();
+                UpdatedDept();
                 return true;
             }
                 catch (InvalidCastException ex)
@@ -140,13 +149,17 @@ namespace DBConnect.controller
         {
             DBUtil util = new DBUtil();
 
-            try { 
+            try
+            { 
             SqlCommand cmd = new SqlCommand(sqlRequest, util.GetDBConnection());
             util.OpenConnection();
                 foreach (var p in sqlParameters)
-                { cmd.Parameters.Add(p); }
+                {
+                    cmd.Parameters.Add(p);
+                }
             cmd.ExecuteNonQuery();
             util.CloseConnection();
+                UpdatedDept();
                 return true;
         }
                 catch (InvalidCastException ex)
