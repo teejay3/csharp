@@ -1,0 +1,11 @@
+C:\Users\teeja\source\repos\FlatUI\FlatUI\bin\Debug\FlatUI.exe
+C:\Users\teeja\source\repos\FlatUI\FlatUI\bin\Debug\FlatUI.pdb
+C:\Users\teeja\source\repos\FlatUI\FlatUI\obj\Debug\FlatUI.Form1.resources
+C:\Users\teeja\source\repos\FlatUI\FlatUI\obj\Debug\FlatUI.Properties.Resources.resources
+C:\Users\teeja\source\repos\FlatUI\FlatUI\obj\Debug\FlatUI.csproj.GenerateResource.cache
+C:\Users\teeja\source\repos\FlatUI\FlatUI\obj\Debug\FlatUI.csproj.CoreCompileInputs.cache
+C:\Users\teeja\source\repos\FlatUI\FlatUI\obj\Debug\FlatUI.exe
+C:\Users\teeja\source\repos\FlatUI\FlatUI\obj\Debug\FlatUI.pdb
+C:\Users\teeja\source\repos\FlatUI\FlatUI\obj\Debug\FlatUI.FirstControl.resources
+C:\Users\teeja\source\repos\FlatUI\FlatUI\obj\Debug\FlatUI.csprojResolveAssemblyReference.cache
+C:\Users\teeja\source\repos\FlatUI\FlatUI\obj\Debug\FlatUI.SecondControl.resources
